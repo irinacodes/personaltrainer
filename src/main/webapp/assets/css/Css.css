@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 9, 2015, 11:05:31 AM
+    Author     : Konstantin
+*/
+
+.inputInput{
+
+    font-size: 14pt;
+
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.buttonSing{
+    left: 10px;
+
+}
+
+.styled_view div.list {
+    padding: 0;
+    width: 100%;
+}
+
+.fontText{
+    font-family: Verdana;
+}
+
+.textPro{
+    color: white;
+    padding-top: 140px;
+    padding-left: 516px;
+}
+
+textNaslov{
+    color: white; 
+    font-size: 130px; 
+    padding-top: 80px;
+}

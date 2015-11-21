@@ -1,0 +1,13 @@
+{
+  "name": "personaltrainer",
+  "version": "1.0-SNAPSHOT",
+  "dependencies": {
+    "knockout": "~3.4.0",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "grunt": "~0.4.5"
+  },
+  "ignore": [
+    "test"
+  ]
+}

@@ -1,7 +1,6 @@
-target
-.classpath
-.project
-.settings
 .idea
 *.iml
 .env
+bower_components
+node_modules
+dist
