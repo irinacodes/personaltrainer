@@ -107,10 +107,10 @@ module.exports = function(grunt) {
 
     //delete dist folder
     clean: {
-        src: [ 'dist'],
-        options: {
-          force: true //to delete folders outside working dir
-        }
+      src: [ 'dist'],
+      options: {
+        force: true //to delete folders outside working dir
+      }
     }
 
   });

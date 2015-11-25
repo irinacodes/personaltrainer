@@ -6,6 +6,7 @@
     "bower": "~1.6.5",
     "grunt": "~0.4.2",
     "grunt-bower-concat": "^0.6.0",
+    "grunt-bower-concat": "~0.6.0",
     "grunt-bower-requirejs": "~2.0.0",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-concat": "~0.5.1",
