@@ -22,7 +22,16 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          'dist/personaltrainer.js': [ 'js/**/*.js' ]
+          'dist/personaltrainer.min.js': [ 'js/**/*.js' ]
+        }
+      },
+      bower: {
+        options: {
+          mangle: true,
+          compress: true
+        },
+        files: {
+          'js/bower.min.js': 'js/bower.js'
         }
       }
     },
@@ -63,6 +72,13 @@ module.exports = function(grunt) {
     bowerRequirejs: {
       target: {
         rjsConfig: 'js/config.js'
+      }
+    },
+
+    //concatenate all bower dependencies into a single file
+    bower_concat: {
+      all: {
+        dest: 'js/bower.js'
       }
     },
 
@@ -111,11 +127,14 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-bower-requirejs');
   //grunt.loadNpmTasks('grunt-contrib-copy');
   //grunt.loadNpmTasks('grunt-contrib-clean');
+  //grunt.loadNpmTasks('grunt-bower-concat');
 
   //Automatically load grunt tasks from package.json
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('test', ['jshint']);
+
+  grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
 
   grunt.registerTask('default', ['uglify', 'cssmin', 'imagemin', 'bowerRequirejs']);
 

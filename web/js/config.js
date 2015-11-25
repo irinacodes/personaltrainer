@@ -1,12 +1,4 @@
 require.config({
-  shim: {
-    jquery: {
-      exports: '$'
-    },
-    underscore: {
-      exports: '_'
-    }
-  },
   paths: {
     bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
     grunt: '../bower_components/grunt/lib/grunt',
@@ -15,5 +7,15 @@ require.config({
     requirejs: '../bower_components/requirejs/require',
     underscore: '../bower_components/underscore/underscore'
   },
+  shim: {
+    jquery: {
+      exports: '$'
+    },
+    underscore: {
+      exports: '_'
+    }
+  },
   packages: []
 });
+
+require(["main"]);

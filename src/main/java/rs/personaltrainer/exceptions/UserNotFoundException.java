@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-class PersonalTrainerUserNotFoundException extends RuntimeException {
+class UserNotFoundException extends RuntimeException {
 
-    public PersonalTrainerUserNotFoundException(String userId) {
+    public UserNotFoundException(String userId) {
         super("could not find user '" + userId + "'.");
     }
 }

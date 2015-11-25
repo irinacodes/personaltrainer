@@ -1,6 +1,9 @@
-define(['jquery'], function($) {
+define(['knockout', 'jquery'], function(ko, $) {
 
-    $(function() {
-        console.log('Hello World');
+    $(document).ready(function () {
+        //Instantiate page view model
+        ko.applyBindings(/* page view model instance */);
+        console.log('knockout instantiated');
     });
+
 });

@@ -6,11 +6,13 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-public class PersonalTrainerUser {
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @NotNull
+    @Size(max = 64)
+    @Column(nullable = false, updatable = false)
+    private String id;
 
     @Column
     private String name;
@@ -18,7 +20,7 @@ public class PersonalTrainerUser {
     @Column
     private String surname;
 
-    @Column(nullable=false)
+    @Column(nullable=false, updatable = false)
     private String email;
 
     @Column
@@ -26,8 +28,10 @@ public class PersonalTrainerUser {
     @Size(min = 3, max = 30,  message = "error.title.size")
     private String loginname;
 
-    @Column(nullable=false)
-    private String password;
+    @NotNull
+    @Size(max = 64)
+    @Column(name = "password", nullable = false)
+    private String hashedPassword;
 
     @Column(nullable=false)
     private Date created;
@@ -36,14 +40,14 @@ public class PersonalTrainerUser {
     private Date updated;
 
 
-    public PersonalTrainerUser() {}
+    public User() {}
 
-    public PersonalTrainerUser(String name, String surname) {
+    public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -76,12 +80,12 @@ public class PersonalTrainerUser {
         this.loginname = loginname;
     }
 
-    public String getPassword() {
-        return password;
+    public String getHashedPassword() {
+        return hashedPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setHashedPassword(String hashedPassword) {
+        this.hashedPassword = hashedPassword;
     }
 
     public Date getCreated() {
