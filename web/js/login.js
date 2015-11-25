@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 
         showMeYourCookies('At loginform submission');
 
-        var cookie = JSON.parse($.cookie('helloween'));
+        var cookie = JSON.parse($.cookie('hello'));
         var data = 'username=' + $('#username').val() + '&password=' + $('#password').val();
         $.ajax({
             //by default, Spring Security exposes a “/login” service which accepts form data to submit credentials

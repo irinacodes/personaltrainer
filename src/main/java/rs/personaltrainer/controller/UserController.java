@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.personaltrainer.exceptions.UserAlreadyExistsException;
 import rs.personaltrainer.model.User;
@@ -24,6 +25,13 @@ class UserController {
     @Autowired
     public UserController(final UserService userService) {
         this.userService = userService;
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<HelloResponse> hello(Principal principal) {
+
+        return new ResponseEntity<HelloResponse>(
+                new HelloResponse("Hello, " + principal.getName() + "!"), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -52,6 +60,19 @@ class UserController {
     @ResponseStatus(HttpStatus.CONFLICT)
     public String handleUserAlreadyExistsException(UserAlreadyExistsException e) {
         return e.getMessage();
+    }
+
+    public static class HelloResponse {
+        private String message;
+        public HelloResponse(String message) {
+            this.message = message;
+        }
+        public String getMessage() {
+            return message;
+        }
+        public void setMessage(String message) {
+            this.message = message;
+        }
     }
 
 }

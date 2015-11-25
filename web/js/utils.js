@@ -8,7 +8,7 @@ function showMeYourCookies(title) {
         console.warn('>>>>> ' + title + ' no JSESSIONID cookie was found');
     }
 
-    var restsecurity = $.cookie('helloween');
+    var restsecurity = $.cookie('hello');
     if (restsecurity) {
         restsecurity = JSON.parse(restsecurity);
         console.log('>>>>> ' + title + ' CSRF token in cookie = ' + restsecurity.csrf);

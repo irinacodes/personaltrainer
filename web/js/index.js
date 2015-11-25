@@ -3,7 +3,7 @@ $(document).ready(function($) {
 
     $.ajax({
         type: 'GET',
-        url: '/rest/hello'
+        url: '/rest/user/hello'
 
     }).done(function (data, textStatus, jqXHR) {
         showMeYourJqXHR('When GET /rest/hello is done', jqXHR);
@@ -11,20 +11,20 @@ $(document).ready(function($) {
 
         var csrfToken = jqXHR.getResponseHeader('X-CSRF-TOKEN');
         if (csrfToken) {
-            var cookie = JSON.parse($.cookie('helloween'));
+            var cookie = JSON.parse($.cookie('hello'));
             cookie.csrf = csrfToken;
-            $.cookie('helloween', JSON.stringify(cookie));
+            $.cookie('hello', JSON.stringify(cookie));
         }
 
-        $('#helloweenMessage').html(data.message);
+        $('#message').html(data.message);
 
     }).fail(function (jqXHR, textStatus, errorThrown) {
-        showMeYourJqXHR('When GET /rest/hello fails', jqXHR);
-        showMeYourCookies('When GET /rest/hello fails');
+        showMeYourJqXHR('When GET /rest/user/hello fails', jqXHR);
+        showMeYourCookies('When GET /rest/user/hello fails');
 
         if (jqXHR.status === 401) { // HTTP Status 401: Unauthorized
             var cookie = JSON.stringify({method: 'GET', url: '/', csrf: jqXHR.getResponseHeader('X-CSRF-TOKEN')});
-            $.cookie('helloween', cookie);
+            $.cookie('hello', cookie);
 
             window.location = '/login.html';
 
@@ -38,7 +38,7 @@ $(document).ready(function($) {
 
         showMeYourCookies('When postButton is clicked');
 
-        var cookie = JSON.parse($.cookie('helloween'));
+        var cookie = JSON.parse($.cookie('hello'));
         $.ajax({
             data: {},
             headers: {'X-CSRF-TOKEN': cookie.csrf},
@@ -65,7 +65,7 @@ $(document).ready(function($) {
 
         showMeYourCookies('When logoutButton is clicked');
 
-        var cookie = JSON.parse($.cookie('helloween'));
+        var cookie = JSON.parse($.cookie('hello'));
         $.ajax({
             data: {},
             headers: {'X-CSRF-TOKEN': cookie.csrf},

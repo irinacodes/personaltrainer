@@ -86,9 +86,9 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          { cwd: 'dist',  // set working folder / root to copy
+          { cwd: 'js',  // set working folder / root to copy
             src: ['**/*'],           // copy all files and subfolders
-            dest: '../src/main/webapp',    // destination folder
+            dest: '../src/main/webapp/js',    // destination folder
             expand: true,           // required when using cwd
             flatten: false // keep directory structure
           }
@@ -97,7 +97,7 @@ module.exports = function(grunt) {
       separate: {
         files: [
           { cwd: '.',
-            src: ['index.html'],
+            src: ['index.html', 'login.html'],
             dest: '../src/main/webapp',
             expand: true
           }
