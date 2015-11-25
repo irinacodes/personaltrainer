@@ -1,10 +1,11 @@
-package rs.personaltrainer;
+package rs.personaltrainer.restsecurity;
 
 
 import com.allanditzel.springframework.security.web.csrf.CsrfTokenResponseHeaderBindingFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -30,10 +31,13 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //any request starting with “/rest/” in the URL will only be accessible to authenticated users
-        http.authorizeRequests().antMatchers("/rest/**").authenticated();
+        http.authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, "/*/**").permitAll()
+                .antMatchers("/login", "/rest/open/**").permitAll()
+                .antMatchers("/logout", "/rest/**").authenticated();
 
         //disable cross site request forgery
-        http.csrf().disable();
+        //http.csrf().disable();
 
         //what happens when an unauthenticated client tries to access a restricted resource
         http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint);

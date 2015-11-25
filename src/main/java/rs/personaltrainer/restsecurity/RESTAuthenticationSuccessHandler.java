@@ -1,4 +1,4 @@
-package rs.personaltrainer;
+package rs.personaltrainer.restsecurity;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
