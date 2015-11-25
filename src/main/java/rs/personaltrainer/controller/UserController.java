@@ -4,16 +4,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import rs.personaltrainer.exceptions.UserAlreadyExistsException;
 import rs.personaltrainer.model.User;
 import rs.personaltrainer.service.UserService;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/rest/user")
 class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -25,12 +27,12 @@ class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public User createUser(@RequestBody @Valid final User user) {
+    public User createUser(@RequestBody @Valid final User user, Principal principal) {
         LOGGER.debug("Received request to create the {}", user);
         return userService.save(user);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> listUsers() {
         LOGGER.debug("Received request to list all users");
         return userService.getList();

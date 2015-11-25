@@ -6,3 +6,4 @@ _SpecRunner.html
 *.iml
 .env
 target/
+web/js/lib

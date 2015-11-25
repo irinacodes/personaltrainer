@@ -1,39 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Sign in &middot; PersonalTrainer Sign in</title>
-    <link href="bower_components/bootstrap/dist/bootstrap.min.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/jquery.cookie/jquery.cookie.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/utils.js"></script>
 </head>
 <body>
-
-<div class="container">
-    <div data-bind="visible: showErrorMessage" class="alert alert-error">
-        Invalid username/password.
-    </div>
-    <form class="form-signin" method="post" action="login.html">
-        <h3 class="muted form-signin-heading">Please sign in</h3>
-        <input type="text" class="input-block-level" placeholder="User name" name="username">
-        <input type="password" class="input-block-level" placeholder="Password" name="password">
-        <button class="btn btn-primary" type="submit">Sign in</button>
-        <hr>
-        <p class="text-info"><small>
-            Log in as <strong>fabrice/fab123</strong> or <strong>paulson/bond</strong><br>
-            See <code>WebSecurityConfig.java</code></small></p>
-    </form>
-</div>
-
-<script src="bower_components/knockout/knockout.js"></script>
-
-<script type="text/javascript">
-    ko.applyBindings({
-        showErrorMessage : ko.computed(function() {
-            var query = window.location.search;
-            return query ? (query.indexOf('error') != -1) : false;
-        })
-    });
-</script>
-
+<form id="loginform" name="loginform">
+    <label for="username">Username: </label><input id="username" name="username"><br/>
+    <label for="password">Password:</label><input id="password" name="password"><br/>
+    <button type="submit">Login!</button>
+</form>
 </body>
 </html>
