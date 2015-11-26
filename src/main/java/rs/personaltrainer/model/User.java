@@ -1,5 +1,7 @@
 package rs.personaltrainer.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -8,11 +10,12 @@ import java.util.Date;
 @Entity
 public class User {
 
-    @Id
+    @Id @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     @NotNull
     @Size(max = 64)
     @Column(nullable = false, updatable = false)
-    private Long id;
+    private String id;
 
     @Column
     private String name;
@@ -51,7 +54,7 @@ public class User {
         this.surname = surname;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

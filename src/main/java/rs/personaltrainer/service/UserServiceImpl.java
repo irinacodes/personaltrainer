@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(long id) {
+    public User getUserById(String id) {
         LOGGER.debug("Getting user={}", id);
         return repository.findOne(id);
     }
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(String id) {
         LOGGER.debug("Deleting user");
         repository.delete(id);
     }
