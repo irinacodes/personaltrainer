@@ -12,7 +12,7 @@ public class User {
     @NotNull
     @Size(max = 64)
     @Column(nullable = false, updatable = false)
-    private String id;
+    private Long id;
 
     @Column
     private String name;
@@ -20,7 +20,7 @@ public class User {
     @Column
     private String surname;
 
-    @Column(nullable=false, updatable = false)
+    @Column(nullable=false, updatable = false, unique = true)
     private String email;
 
     @Column
@@ -30,7 +30,7 @@ public class User {
 
     @NotNull
     @Size(max = 64)
-    @Column(name = "password", nullable = false)
+    @Column(name = "password_hash", nullable = false)
     private String hashedPassword;
 
     @Column(nullable=false)
@@ -38,6 +38,10 @@ public class User {
 
     @Column(nullable=false)
     private Date updated;
+
+    @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 
     public User() {}
@@ -47,7 +51,7 @@ public class User {
         this.surname = surname;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -102,6 +106,14 @@ public class User {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

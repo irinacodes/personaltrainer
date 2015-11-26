@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import rs.personaltrainer.exceptions.UserAlreadyExistsException;
 import rs.personaltrainer.model.User;
@@ -13,6 +14,7 @@ import rs.personaltrainer.service.UserService;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -37,15 +39,16 @@ class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public User createUser(@RequestBody @Valid final User user, Principal principal) {
         LOGGER.debug("Received request to create the {}", user);
-        return userService.save(user);
+        return userService.create(user);
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<User> listUsers() {
+    public Collection<User> listUsers() {
         LOGGER.debug("Received request to list all users");
         return userService.getList();
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method=RequestMethod.DELETE, value="{id}")
     public void delete(@PathVariable String id) {
         userService.delete(id);

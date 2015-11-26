@@ -1,6 +1,8 @@
 package rs.personaltrainer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.slf4j.Logger;
@@ -26,14 +28,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserById(long id) {
+        LOGGER.debug("Getting user={}", id);
+        return repository.findOne(id);
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        LOGGER.debug("Getting user by email={}", email.replaceFirst("@.*", "@***"));
+        return repository.findOneByEmail(email);
+    }
+
+    @Override
     @Transactional
-    public User save(@NotNull @Valid final User user) {
+    public User create(@NotNull @Valid final User user) {
         LOGGER.debug("Creating {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
-            throw new UserAlreadyExistsException(
-                    String.format("There already exists a user with id=%s", user.getId()));
+            throw new UserAlreadyExistsException(String.format("There already exists a user with id=%s", user.getId()));
         }
+        user.setHashedPassword(new BCryptPasswordEncoder().encode(user.getHashedPassword()));
         return repository.save(user);
     }
 
@@ -41,17 +55,13 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public List<User> getList() {
         LOGGER.debug("Retrieving the list of all users");
-        return repository.findAll();
+        return repository.findAll(new Sort("email"));
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(long id) {
         LOGGER.debug("Deleting user");
         repository.delete(id);
     }
 
-    @Override
-    public User update(User user) {
-        return null;
-    }
 }
