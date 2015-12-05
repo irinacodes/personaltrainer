@@ -1,14 +1,14 @@
-# Personal trainer
+## Personal trainer
 Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
 
-#How to setup the project
+###How to setup the project
 You will need Linux and Java installed. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
 Clone this repository:  
 ```git clone https://github.com/probablyirina/personaltrainer```  
 and then cd to personaltrainer.
 
-#How to bootstrap front-end setup
+###How to bootstrap front-end setup
 Install Node.js by following instructions from [here](https://nodejs.org/en/download/).  
 You will get Node package manager (npm).
 Install bower globally:  
@@ -27,7 +27,7 @@ The location of the directory with dependencies (bower configuration) is defined
 Run  
 ```grunt auto_install```
 
-#How to run the project
+###How to run the project
 To copy the front-end to src/webapp folder of the Maven project, run  
 ```grunt copy```  
 Then, cd .. to get out of the web dir, and run  
