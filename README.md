@@ -14,7 +14,7 @@ You will get Node package manager (npm).
 Install bower globally:  
 ```npm install -g bower```  
 Instal Grunt command-line interface globally:  
-```npm install -g grunt-cli```  
+```npm install -g grunt-cli```   
 Next, cd into *web* dir and run  
 ```npm install grunt```  
 to install Grunt in the working dir. It will create *node_modules* dir under *web*.  
