@@ -2,7 +2,7 @@
 Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
 
 ###How to setup the project
-You will need Linux and Java installed. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
+You will need Linux and Java. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
 Clone this repository:  
 ```git clone https://github.com/probablyirina/personaltrainer```  
@@ -21,7 +21,7 @@ to install Grunt in the working dir. It will create *node_modules* dir under *we
 File *package.json* defines all Grunt modules that are used for Grunt tasks.  
 Next, run  
 ```npm install grunt-auto-install```  
-to install a plugin that will automatically install Grunt modules and bower dependencies defined in *package.json* and *bower.json* files.
+to install a plugin that will automatically install Grunt modules and bower dependencies defined in *package.json* and *bower.json* files, respectively.
 Bower install will create *lib* directory under *js*, with all js dependencies defined in *bower.json* file.   
 The location of the directory with dependencies (bower configuration) is defined in *.bowerrc* file.  
 Finally, run  
