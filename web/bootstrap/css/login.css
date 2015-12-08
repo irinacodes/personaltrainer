@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <title>CodePen - Random Login Form</title>
-
-    <style>
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 
@@ -148,28 +138,3 @@ body{
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
-</style>
-
-    <script src="js/prefixfree.min.js"></script>
-
-</head>
-
-<body>
-
-  <div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Site<span>Random</span></div>
-		</div>
-		<br>
-		<div class="login">
-				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
-				<input type="button" value="Login">
-		</div>
-
-  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-
-</body>
-
-</html>
