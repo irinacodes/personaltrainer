@@ -2,8 +2,7 @@
 Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
 
 ###How to setup the project
-You will need Linux and Java. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
-and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
+You will need Linux and Java installed. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), Maven, and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
 Clone this repository:  
 ```git clone https://github.com/probablyirina/personaltrainer```  
 and then cd to *personaltrainer*.
