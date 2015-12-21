@@ -33,4 +33,4 @@ To copy the front-end to *src/webapp* folder of the Maven project structure, run
 ```grunt copy```  
 Then, cd .. to get out of the *web* dir, and run  
 ```mvn spring-boot:run```  
-You should see the app running at *localhost:8181*.
+You should see the app running at *localhost:8181*. If you want to change server port, you can find the setting in [application.properties] (https://github.com/probablyirina/personaltrainer/blob/master/src/main/resources/application.properties). 
