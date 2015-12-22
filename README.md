@@ -34,3 +34,5 @@ To copy the front-end to *src/webapp* folder of the Maven project structure, run
 Then, cd .. to get out of the *web* dir, and run  
 ```mvn spring-boot:run```  
 You should see the app running at *localhost:8181*. If you want to change server port, you can find the setting in [application.properties] (https://github.com/probablyirina/personaltrainer/blob/master/src/main/resources/application.properties). 
+###Biblioteke
+Napravio sam folder lib na prvom nivou, folder je hidden, odnosno zasencen. Prvo sam uradio commit na local, pa puch na development branch, ali te biblioteke nije prebacio, a to su moji css fajlovi i js fajlovi. Kada da dozvolim folderu da se i on prebaci na github?
