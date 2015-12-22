@@ -1,11 +1,11 @@
 require.config({
   paths: {
-    bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
-    grunt: '../bower_components/grunt/lib/grunt',
-    jquery: '../bower_components/jquery/dist/jquery',
-    knockout: '../bower_components/knockout/dist/knockout',
-    requirejs: '../bower_components/requirejs/require',
-    underscore: '../bower_components/underscore/underscore'
+    bootstrap: 'lib/bootstrap/dist/js/bootstrap',
+    grunt: 'lib/grunt/lib/grunt',
+    jquery: 'lib/jquery/dist/jquery',
+    knockout: 'lib/knockout/dist/knockout',
+    requirejs: 'lib/requirejs/require',
+    underscore: 'lib/underscore/underscore'
   },
   shim: {
     jquery: {
