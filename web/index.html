@@ -13,7 +13,9 @@
 
     <link href="css/login.css" rel="stylesheet">
 
-    <script src="js/custom/login.js"></script>
+    <script src="js/lib/jquery.cookie/jquery.cookie.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/utils.js"></script>
 
     <!--jquery for datapicker-->
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
@@ -81,9 +83,11 @@
             </div>
         </div>
         <div class="login">
-            <input type="text" placeholder="username" name="user"><br>
-            <input type="password" placeholder="password" name="password"><br>
-            <input type="button" value="Login">
+            <form id="loginform" name="loginform">
+                <input type="text" placeholder="username" name="username"><br>
+                <input type="password" placeholder="password" name="password"><br>
+                <input type="submit" value="Login">
+            </form>
         </div>
     </div>
 </header>
