@@ -88,6 +88,20 @@
             <artifactId>spring-boot-maven-plugin</artifactId>
         </plugin>
 
+        <plugin>
+            <groupId>pl.allegro</groupId>
+            <artifactId>grunt-maven-plugin</artifactId>
+            <version>1.4.1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>npm</goal>
+                        <goal>grunt</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
     <!--<plugin>-->
         <!--<groupId>org.codehaus.mojo</groupId>-->
         <!--<artifactId>exec-maven-plugin</artifactId>-->

@@ -1,0 +1,9 @@
+language: java
+ before_install:
+- . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
+  - npm install
+ branches:
+   only:
+     - master
