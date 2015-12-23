@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/probablyirina/personaltrainer.svg?branch=master)](https://travis-ci.org/probablyirina/personaltrainer)
 
+##To be changed - added grunt maven plugin
 ## Personal trainer
 Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
 
