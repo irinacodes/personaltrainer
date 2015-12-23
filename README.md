@@ -22,8 +22,7 @@ Next, run
 ```npm install grunt-auto-install```    
 ```npm install load-grunt-tasks```    
 to install a plugin that will automatically install Grunt modules and bower dependencies defined in *package.json* and *bower.json* files, respectively.
-Bower install will create *lib* directory under *js*, with all js dependencies defined in *bower.json* file.   
-The location of the directory with dependencies (bower configuration) is defined in *.bowerrc* file.  
+Bower install will create *lib* directory under *js*, with all js dependencies defined in *bower.json* file. The location of the directory with dependencies (bower configuration) is defined in [.bowerrc](https://github.com/probablyirina/personaltrainer/blob/development/web/.bowerrc) file.  
 Finally, run  
 ```grunt auto_install```  
 and you are all set!
