@@ -1,9 +1,8 @@
-.idea
-node_modules
-dist
+.idea/
+web/node_modules/**
+dist/**
 _SpecRunner.html
 *.iml
 .env
-target/
-lib
-personaltrainer.iml
+target/**
+web/js/lib/**
