@@ -2,7 +2,7 @@
 Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
 
 ###How to setup the project
-You will need Linux and Java installed. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), Maven, and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
+You will need Linux and Java installed. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Maven](https://maven.apache.org/), and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
 Clone this repository:  
 ```git clone https://github.com/probablyirina/personaltrainer```  
 and then cd to *personaltrainer*.
@@ -10,9 +10,9 @@ and then cd to *personaltrainer*.
 ###How to bootstrap front-end setup
 Install Node.js by following instructions from [here](https://nodejs.org/en/download/).  
 You will get Node package manager (npm).
-Install bower globally:  
+Install [Bower](http://bower.io/) globally:  
 ```npm install -g bower```  
-Instal Grunt command-line interface globally:  
+Instal [Grunt](http://gruntjs.com/) command-line interface globally:  
 ```npm install -g grunt-cli```   
 Next, cd into *web* dir and run  
 ```npm install grunt```  
