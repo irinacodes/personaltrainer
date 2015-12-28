@@ -91,39 +91,46 @@
         <plugin>
             <groupId>pl.allegro</groupId>
             <artifactId>grunt-maven-plugin</artifactId>
-            <version>1.4.1</version>
+            <version>1.5.0</version>
+
             <executions>
                 <execution>
                     <goals>
+                        <goal>create-resources</goal>
                         <goal>npm</goal>
+                        <!--<goal>bower</goal>-->
                         <goal>grunt</goal>
                     </goals>
                 </execution>
             </executions>
+
         </plugin>
 
-    <!--<plugin>-->
-        <!--<groupId>org.codehaus.mojo</groupId>-->
-        <!--<artifactId>exec-maven-plugin</artifactId>-->
-        <!--<version>1.4.0</version>-->
-        <!--<executions>-->
-            <!--<execution>-->
-                <!--<phase>generate-sources</phase>-->
-                <!--<goals>-->
-                    <!--<goal>exec</goal>-->
-                <!--</goals>-->
-            <!--</execution>-->
-        <!--</executions>-->
-        <!--<configuration>-->
-            <!--<executable>bower</executable>-->
-            <!--<arguments>-->
-                <!--<argument>install</argument>-->
-            <!--</arguments>-->
-            <!--<workingDirectory>${basedir}/src/main/webapp-->
-            <!--</workingDirectory>-->
-        <!--</configuration>-->
-    <!--</plugin>-->
-        <!-- -->
+        <!-- configure maven war plugin not to include front-end sourves into war -->
+        <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+                <warSourceExcludes>static/**</warSourceExcludes>
+            </configuration>
+        </plugin>
+
+        <!-- configure mvn clean to delete front-end target dir -->
+        <plugin>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <filesets>
+                    <fileset>
+                        <directory>target-grunt</directory>
+                        <includes>
+                        <include>**</include>
+                        </includes>
+                    </fileset>
+                </filesets>
+            </configuration>
+        </plugin>
+
     </plugins>
     </build>
 

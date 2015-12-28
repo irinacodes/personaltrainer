@@ -5,4 +5,5 @@ _SpecRunner.html
 *.iml
 .env
 target/
+target-grunt/
 web/js/lib/**
