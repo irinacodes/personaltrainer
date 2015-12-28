@@ -1,11 +1,11 @@
 language: java
-before_install:
+before_script:
   - $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
   - npm install
   - npm install -g bower
-  - bower install
+script: mvn test
 branches:
    only:
      - master
