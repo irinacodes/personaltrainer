@@ -7,53 +7,53 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    auto_install: {
-      local: {},
-      subdir: {
-        options: {
-          cwd: 'subdir',
-          stdout: true,
-          stderr: true,
-          failOnError: true,
-          npm: '--production'
-        }
-      }
-    },
+    //auto_install: {
+    //  local: {},
+    //  subdir: {
+    //    options: {
+    //      cwd: 'subdir',
+    //      stdout: true,
+    //      stderr: true,
+    //      failOnError: true,
+    //      npm: '--production'
+    //    }
+    //  }
+    //},
 
     //validate all custom js files
     jshint: {
-      all: ['js/**/*.js'],
+      all: ['js/**/*.js', '!js/lib/**'],
       options: {
         force: true
       }
     },
 
     //concatenate and minify all js files
-    uglify: {
-      build: {
-        options: {
-          mangle: false
-        },
-        files: {
-          'dist/personaltrainer.min.js': [ 'js/**/*.js' ]
-        }
-      },
-      bower: {
-        options: {
-          mangle: true,
-          compress: true
-        },
-        files: {
-          'js/bower.min.js': 'js/bower.js'
-        }
-      }
-    },
+    //uglify: {
+    //  build: {
+    //    options: {
+    //      mangle: false
+    //    },
+    //    files: {
+    //      'dist/personaltrainer.min.js': [ 'js/**/*.js' ]
+    //    }
+    //  },
+    //  bower: {
+    //    options: {
+    //      mangle: true,
+    //      compress: true
+    //    },
+    //    files: {
+    //      'js/bower.min.js': 'js/bower.js'
+    //    }
+    //  }
+    //},
 
     //compress css files
     cssmin: {
       build: {
         files: {
-          'dist/personatrainer.css': [ 'css/*.css' ]
+          'dist/personatrainer.min.css': [ 'css/*.css' ]
         }
       }
     },
@@ -63,8 +63,8 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'img',
-          src: ['**/*.{png,jpg,gif}'],
+          cwd: './img',
+          src: '{,*/}**/*.{png,jpg,jpeg}',
           dest: BUILD_DIR + 'images'
         }]
       }
@@ -96,27 +96,27 @@ module.exports = function(grunt) {
     },
 
     //copy dist folder contents to maven webapp dir
-    copy: {
-      main: {
-        files: [
-          { cwd: 'js',  // set working folder / root to copy
-            src: ['**/*'],           // copy all files and subfolders
-            dest: '../src/main/webapp/js',    // destination folder
-            expand: true,           // required when using cwd
-            flatten: false // keep directory structure
-          }
-        ]
-      },
-      separate: {
-        files: [
-          { cwd: '.',
-            src: ['index.html', 'login.html'],
-            dest: '../src/main/webapp',
-            expand: true
-          }
-        ]
-      }
-    },
+    //copy: {
+    //  main: {
+    //    files: [
+    //      { cwd: 'js',  // set working folder / root to copy
+    //        src: ['**/*'],           // copy all files and subfolders
+    //        dest: '../src/main/webapp/js',    // destination folder
+    //        expand: true,           // required when using cwd
+    //        flatten: false // keep directory structure
+    //      }
+    //    ]
+    //  },
+    //  separate: {
+    //    files: [
+    //      { cwd: '.',
+    //        src: ['index.html', 'login.html'],
+    //        dest: '../src/main/webapp',
+    //        expand: true
+    //      }
+    //    ]
+    //  }
+    //},
 
     //delete dist folder
     clean: {
@@ -176,7 +176,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
 
-  grunt.registerTask('default', ['mavenPrepare', 'mavenDist']);
+  grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'mavenDist']);
 
   grunt.registerTask('build', [ 'clean', 'jshint', 'uglify', 'cssmin', 'imagemin', 'copy']);
 
