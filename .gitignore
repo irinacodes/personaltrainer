@@ -1,9 +1,9 @@
 .idea/
-web/node_modules/**
+src/main/java/webapp/node_modules/**
 dist/**
 _SpecRunner.html
 *.iml
 .env
 target/
 target-grunt/
-web/js/lib/**
+src/main/java/webapp/js/lib/**
