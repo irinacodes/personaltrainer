@@ -1,61 +1,29 @@
-var BUILD_DIR = './dist/';
+var SRC_PATH = 'src/main/webapp/WEB-INF/';
+var BUILD_DIR = 'src/main/webapp/static/';
 var path = require('path');
 
 module.exports = function(grunt) {
 
+  //reset if you want to uglify files
   debug = true;
 
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
-    //auto_install: {
-    //  local: {},
-    //  subdir: {
-    //    options: {
-    //      cwd: 'subdir',
-    //      stdout: true,
-    //      stderr: true,
-    //      failOnError: true,
-    //      npm: '--production'
-    //    }
-    //  }
-    //},
-
     //validate all custom js files
     jshint: {
-      all: ['js/**/*.js', '!js/lib/**'],
+      all: [SRC_PATH + 'js/**/*.js', '!'+ SRC_PATH + 'js/lib/**/*.js'],
       options: {
         force: true
       }
     },
 
-    //concatenate and minify all js files
-    //uglify: {
-    //  build: {
-    //    options: {
-    //      mangle: false
-    //    },
-    //    files: {
-    //      'dist/personaltrainer.min.js': [ 'js/**/*.js' ]
-    //    }
-    //  },
-    //  bower: {
-    //    options: {
-    //      mangle: true,
-    //      compress: true
-    //    },
-    //    files: {
-    //      'js/bower.min.js': 'js/bower.js'
-    //    }
-    //  }
-    //},
-
     //compress css files
     cssmin: {
       build: {
         files: {
-          'dist/personatrainer.min.css': [ 'css/*.css' ]
+          'src/main/webapp/static/personatrainer.min.css': [ SRC_PATH + 'css/*.css' ]
         }
       }
     },
@@ -65,17 +33,24 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: './img',
+          cwd: SRC_PATH + 'img',
           src: '{,*/}**/*.{png,jpg,jpeg}',
           dest: BUILD_DIR + 'images'
         }]
       }
     },
 
+    //automagically wire up installed Bower components into requireJS config
+    bowerRequirejs: {
+      target: {
+        rjsConfig: SRC_PATH + 'js/config.js'
+      }
+    },
+
     watch: {
       scripts: {
-        files: ['js/**/*.js'],
-        tasks: ['cssmin', 'uglify'],
+        files: [SRC_PATH + '/**'],
+        tasks: ['jshint', 'cssmin', 'imagemin', 'requirejs'],
         options: {
           livereload: true,
           spawn: false
@@ -83,75 +58,32 @@ module.exports = function(grunt) {
       }
     },
 
-    //automagically wire up installed Bower components into requireJS config
-    bowerRequirejs: {
-      target: {
-        rjsConfig: 'js/config.js'
+    //copy html files to maven dist dir
+    copy: {
+      main: {
+        files: [
+          { cwd: SRC_PATH,  // set working folder / root to copy
+            src: ['*.html'],           // copy all html files
+            dest: BUILD_DIR,    // destination folder
+            expand: true,           // required when using cwd
+            flatten: false // keep directory structure
+          }
+        ]
       }
     },
 
-    //concatenate all bower dependencies into a single file
-    bower_concat: {
-      all: {
-        dest: 'js/bower.js'
-      }
-    },
-
-    //copy dist folder contents to maven webapp dir
-    //copy: {
-    //  main: {
-    //    files: [
-    //      { cwd: 'js',  // set working folder / root to copy
-    //        src: ['**/*'],           // copy all files and subfolders
-    //        dest: '../src/main/webapp/js',    // destination folder
-    //        expand: true,           // required when using cwd
-    //        flatten: false // keep directory structure
-    //      }
-    //    ]
-    //  },
-    //  separate: {
-    //    files: [
-    //      { cwd: '.',
-    //        src: ['index.html', 'login.html'],
-    //        dest: '../src/main/webapp',
-    //        expand: true
-    //      }
-    //    ]
-    //  }
-    //},
-
+    //concatenate and uglify requirejs dependencies
     requirejs: {
       compile: {
         options: {
-          baseUrl: 'js',
-          paths: {
-            'lib': 'lib',
-            'jquery': 'lib/jquery/jquery-2.1.1'
-          },
+          baseUrl: 'src/main/webapp/WEB-INF/js',
+          mainConfigFile: "src/main/webapp/WEB-INF/js/config.js",
           name: 'main',
           wrap: true,
           preserveLicenseComments: false,
           optimize: debug ? 'none' : 'uglify2',
-          out: 'dist/personaltrainer.js',
-          'onModuleBundleComplete': function (data) {
-            var fs = require('fs');
-            var amdclean = require('amdclean');
-            var outputFile = 'dist/personaltrainer.js';
-
-            fs.writeFileSync(outputFile, amdclean.clean({
-                  'filePath': outputFile
-                })
-            );
-          }
+          out: 'src/main/webapp/static/personaltrainer.min.js'
         }
-      }
-    },
-
-    //delete dist folder
-    clean: {
-      src: [ 'target-grunt'],
-      options: {
-        force: true //to delete folders outside working dir
       }
     },
 
@@ -170,12 +102,7 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-bower-concat');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -183,7 +110,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-maven');
 
 
@@ -192,10 +118,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint']);
 
-  grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
-
-  grunt.registerTask('default', ['mavenPrepare']);
-
-  grunt.registerTask('build', [ 'clean', 'jshint', 'uglify', 'cssmin', 'imagemin', 'copy']);
+  grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'requirejs', 'copy']);
 
 };

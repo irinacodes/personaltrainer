@@ -131,21 +131,21 @@
 
         </plugin>
 
-        <!-- configure mvn clean to delete front-end target dir -->
-        <!--<plugin>-->
-            <!--<artifactId>maven-clean-plugin</artifactId>-->
-            <!--<version>3.0.0</version>-->
-            <!--<configuration>-->
-                <!--<filesets>-->
-                    <!--<fileset>-->
-                        <!--<directory>target-grunt</directory>-->
-                        <!--<includes>-->
-                        <!--<include>**</include>-->
-                        <!--</includes>-->
-                    <!--</fileset>-->
-                <!--</filesets>-->
-            <!--</configuration>-->
-        <!--</plugin>-->
+        <!-- configure mvn clean to delete generated front-end dir also -->
+        <plugin>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <filesets>
+                    <fileset>
+                        <directory>src/main/webapp/static</directory>
+                        <includes>
+                        <include>**</include>
+                        </includes>
+                    </fileset>
+                </filesets>
+            </configuration>
+        </plugin>
 
     </plugins>
     </build>

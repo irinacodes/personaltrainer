@@ -4,5 +4,5 @@ _SpecRunner.html
 .env
 target/
 node_modules/
-bower_components/
+src/main/webapp/WEB-INF/js/lib/
 src/main/webapp/static
