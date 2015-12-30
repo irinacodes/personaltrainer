@@ -1,10 +1,8 @@
 .idea/
-dist/**
 _SpecRunner.html
 *.iml
 .env
 target/
-target-grunt/
-src/main/webapp/static/node_modules/
-src/main/webapp/static/js/lib/
-src/main/webapp/static/dist/
+node_modules/
+bower_components/
+src/main/webapp/static

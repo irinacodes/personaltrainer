@@ -7,7 +7,6 @@
     <groupId>rs.personaltrainer</groupId>
     <artifactId>personaltrainer</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
 
     <name>personaltrainer</name>
     <description>Example Heroku app</description>
@@ -111,12 +110,20 @@
             <artifactId>grunt-maven-plugin</artifactId>
             <version>1.5.0</version>
 
+            <configuration>
+                <bowerExecutable>node_modules/bower/bin/bower</bowerExecutable>
+                <gruntExecutable>node_modules/grunt-cli/bin/grunt</gruntExecutable>
+                <runGruntWithNode>true</runGruntWithNode>
+                <!-- relative to src/main/webapp/-->
+                <jsSourceDirectory>WEB-INF</jsSourceDirectory>
+                <gruntBuildDirectory>${project.basedir}</gruntBuildDirectory>
+            </configuration>
+
             <executions>
                 <execution>
                     <goals>
-                        <goal>create-resources</goal>
                         <goal>npm</goal>
-                        <!--<goal>bower</goal>-->
+                        <goal>bower</goal>
                         <goal>grunt</goal>
                     </goals>
                 </execution>
@@ -124,30 +131,21 @@
 
         </plugin>
 
-        <!-- configure maven war plugin not to include front-end sourves into war -->
-        <plugin>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.3</version>
-            <configuration>
-                <warSourceExcludes>static/**</warSourceExcludes>
-            </configuration>
-        </plugin>
-
         <!-- configure mvn clean to delete front-end target dir -->
-        <plugin>
-            <artifactId>maven-clean-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <filesets>
-                    <fileset>
-                        <directory>target-grunt</directory>
-                        <includes>
-                        <include>**</include>
-                        </includes>
-                    </fileset>
-                </filesets>
-            </configuration>
-        </plugin>
+        <!--<plugin>-->
+            <!--<artifactId>maven-clean-plugin</artifactId>-->
+            <!--<version>3.0.0</version>-->
+            <!--<configuration>-->
+                <!--<filesets>-->
+                    <!--<fileset>-->
+                        <!--<directory>target-grunt</directory>-->
+                        <!--<includes>-->
+                        <!--<include>**</include>-->
+                        <!--</includes>-->
+                    <!--</fileset>-->
+                <!--</filesets>-->
+            <!--</configuration>-->
+        <!--</plugin>-->
 
     </plugins>
     </build>

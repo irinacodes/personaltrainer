@@ -3,6 +3,8 @@ var path = require('path');
 
 module.exports = function(grunt) {
 
+  debug = true;
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -118,6 +120,33 @@ module.exports = function(grunt) {
     //  }
     //},
 
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'js',
+          paths: {
+            'lib': 'lib',
+            'jquery': 'lib/jquery/jquery-2.1.1'
+          },
+          name: 'main',
+          wrap: true,
+          preserveLicenseComments: false,
+          optimize: debug ? 'none' : 'uglify2',
+          out: 'dist/personaltrainer.js',
+          'onModuleBundleComplete': function (data) {
+            var fs = require('fs');
+            var amdclean = require('amdclean');
+            var outputFile = 'dist/personaltrainer.js';
+
+            fs.writeFileSync(outputFile, amdclean.clean({
+                  'filePath': outputFile
+                })
+            );
+          }
+        }
+      }
+    },
+
     //delete dist folder
     clean: {
       src: [ 'target-grunt'],
@@ -129,24 +158,12 @@ module.exports = function(grunt) {
     mavenPrepare: {
       options: {
         resources: ['**']
-      },
-      prepare: {}
+      }
     },
-
-    mavenDist: {
-      options: {
-        warName: '<%= gruntMavenProperties.warName %>',
-        deliverables: ['**', '!non-deliverable.js'],
-        gruntDistDir: 'dist'
-      },
-      dist: {}
-    },
-
-    gruntMavenProperties: grunt.file.readJSON('grunt-maven.json'),
 
     watch: {
       maven: {
-        files: ['<%= gruntMavenProperties.filesToWatch %>'],
+        files: [],
         tasks: 'default'
       }
     }
@@ -162,6 +179,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -176,7 +194,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
 
-  grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'mavenDist']);
+  grunt.registerTask('default', ['mavenPrepare']);
 
   grunt.registerTask('build', [ 'clean', 'jshint', 'uglify', 'cssmin', 'imagemin', 'copy']);
 
