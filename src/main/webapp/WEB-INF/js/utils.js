@@ -24,4 +24,5 @@ function showMeYourJqXHR(title, jqXHR) {
     } else {
         console.error('>>>>> ' + title + ' no jqXHR is defined... That\'s not normal at all...');
     }
+    console.log("Hello");
 }

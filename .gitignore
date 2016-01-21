@@ -1,8 +1,8 @@
-.idea
-node_modules
-dist
+.idea/
 _SpecRunner.html
 *.iml
 .env
 target/
-lib
+node_modules/
+src/main/webapp/WEB-INF/js/lib/
+src/main/webapp/static

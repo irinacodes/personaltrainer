@@ -1,37 +1,15 @@
+[![Build Status](https://travis-ci.org/probablyirina/personaltrainer.svg?branch=master)](https://travis-ci.org/probablyirina/personaltrainer)
+
 ## Personal trainer
-Spring Boot/Data/Security, REST, Maven, Flyway, Grunt, Bower, Knockout, Requirejs app
+Spring Boot/Data/Security, REST, Maven, Hibernate, Flyway, Grunt, Bower, Knockout, Requirejs app integrated with [Travis CI](https://travis-ci.org/) and deployed on [Heroku](https://www.heroku.com/) cloud.
 
-###How to setup the project
-You will need Linux and Java. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
-and some IDE (preferably [Intellij IDEA](https://www.jetbrains.com/idea/)).
-Clone this repository:  
-```git clone https://github.com/probablyirina/personaltrainer```  
-and then cd to *personaltrainer*.
+###Project setup
+You will need Java 7 installed; the project has been developed and tested on Linux; it might work on Windows but you are on your own. Install [Git] (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Maven](https://maven.apache.org/), and [npm](https://www.npmjs.com/).
+Project has separate frontend and backend builds integrated by using [grunt-maven-plugin] (https://github.com/allegro/grunt-maven-plugin). Front-end sources are located under [WEB-INF](https://github.com/probablyirina/personaltrainer/tree/master/src/main/webapp/WEB-INF) dir (because when you forget to exclude them from WAR, they cannot be accessed by the Spring).
+File [*package.json*](https://github.com/probablyirina/personaltrainer/blob/master/package.json) defines all Grunt modules. Bower dependencies are defined in [*bower.json*](https://github.com/probablyirina/personaltrainer/blob/master/bower.json).
+Grunt and Bower are installed locally during Maven build; you will see that Grunt created *node_modules*, while Bower adds *bower_components* dirs in project root. The setup for cloud continuous integration is in [*.travis.yml](https://github.com/probablyirina/personaltrainer/blob/master/.travis.yml) file. Whenever something is committed to the master branch, Travis runs the tests and automatically deploys a successful build to Heroku.
 
-###How to bootstrap front-end setup
-Install Node.js by following instructions from [here](https://nodejs.org/en/download/).  
-You will get Node package manager (npm).
-Install bower globally:  
-```npm install -g bower```  
-Instal Grunt command-line interface globally:  
-```npm install -g grunt-cli```   
-Next, cd into *web* dir and run  
-```npm install grunt```  
-to install Grunt in the working dir. It will create *node_modules* dir under *web*.  
-File *package.json* defines all Grunt modules that are used for Grunt tasks.  
-Next, run  
-```npm install grunt-auto-install```    
-```npm install load-grunt-tasks```    
-to install a plugin that will automatically install Grunt modules and bower dependencies defined in *package.json* and *bower.json* files, respectively.
-Bower install will create *lib* directory under *js*, with all js dependencies defined in *bower.json* file.   
-The location of the directory with dependencies (bower configuration) is defined in *.bowerrc* file.  
-Finally, run  
-```grunt auto_install```  
-and you are all set!
-
-###How to run the project
-To copy the front-end to *src/webapp* folder of the Maven project structure, run  
-```grunt copy```  
-Then, cd .. to get out of the *web* dir, and run  
+###How to build and run the project
+In development, the Spring Boot project is run by running  
 ```mvn spring-boot:run```  
-You should see the app running at *localhost:8181*.
+from the project dir, which runs the app extracted rather than from WAR. You should see the app running at *localhost:8181*. If you want to change server port, you can find the setting in [application.properties] (https://github.com/probablyirina/personaltrainer/blob/master/src/main/resources/application.properties). 

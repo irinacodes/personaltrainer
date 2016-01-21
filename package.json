@@ -4,7 +4,9 @@
   "repository": "https://github.com/probablyirina/personaltrainer.git",
   "devDependencies": {
     "bower": "~1.6.5",
-    "grunt": "~0.4.2",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-auto-install": "~0.3.0",
     "grunt-bower-concat": "~0.6.0",
     "grunt-bower-requirejs": "~2.0.0",
     "grunt-contrib-clean": "^0.7.0",
@@ -16,10 +18,10 @@
     "grunt-contrib-less": "~1.1.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-uglify": "~0.11.0",
-    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-maven": "~1.1.0",
     "grunt-wiredep": "~2.0.0",
-    "load-grunt-tasks": "~3.3.0",
-    "grunt-auto-install": "~0.3.0"
+    "load-grunt-tasks": "~3.3.0"
   },
   "scripts": {
     "start": "node index.js",
