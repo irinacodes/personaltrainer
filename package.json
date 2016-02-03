@@ -17,11 +17,12 @@
     "grunt-contrib-jshint": "~0.11.3",
     "grunt-contrib-less": "~1.1.0",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-uglify": "~0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-maven": "~1.1.0",
     "grunt-wiredep": "~2.0.0",
-    "load-grunt-tasks": "~3.3.0"
+    "load-grunt-tasks": "~3.3.0",
+    "grunt-processhtml": "~0.3.9"
   },
   "scripts": {
     "start": "node index.js",

@@ -5,4 +5,4 @@ _SpecRunner.html
 target/
 node_modules/
 src/main/webapp/WEB-INF/js/lib/
-src/main/webapp/static
+src/main/resources/static

@@ -1,21 +1,17 @@
 package rs.personaltrainer.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
+@Table(name = "PERSONALTRAINER_USER")
 public class User {
 
-    @Id @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @NotNull
-    @Size(max = 64)
-    @Column(nullable = false, updatable = false)
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column
     private String name;
@@ -27,8 +23,8 @@ public class User {
     private String email;
 
     @Column
-    @NotNull(message = "error.title.notnull")
-    @Size(min = 3, max = 30,  message = "error.title.size")
+    @NotNull(message = "error.loginname.notnull")
+    @Size(min = 3, max = 30,  message = "error.loginname.size")
     private String loginname;
 
     @NotNull
@@ -46,6 +42,22 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column
+    private Boolean enabled;
+
+    @Column
+    Boolean verified;
+
+    @OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+    private UserDetail userDetail;
+
+    public Boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public User() {}
 
@@ -54,7 +66,7 @@ public class User {
         this.surname = surname;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -117,6 +129,22 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public UserDetail getUserDetail() {
+        return userDetail;
+    }
+
+    public void setUserDetail(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
+
+    public Boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(Boolean verified) {
+        this.verified = verified;
     }
 
     @Override

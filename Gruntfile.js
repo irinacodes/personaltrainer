@@ -1,5 +1,5 @@
 var SRC_PATH = 'src/main/webapp/WEB-INF/';
-var BUILD_DIR = 'src/main/webapp/static/';
+var BUILD_DIR = 'src/main/resources/static/';
 var path = require('path');
 
 module.exports = function(grunt) {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'src/main/webapp/static/personatrainer.min.css': [ SRC_PATH + 'css/*.css' ]
+          'src/main/resources/static/personatrainer.min.css': [ SRC_PATH + 'css/*.css' ]
         }
       }
     },
@@ -82,7 +82,28 @@ module.exports = function(grunt) {
           wrap: true,
           preserveLicenseComments: false,
           optimize: debug ? 'none' : 'uglify2',
-          out: 'src/main/webapp/static/personaltrainer.min.js'
+          out: BUILD_DIR + 'libraries.min.js'
+        }
+      }
+    },
+
+    //concatenate and uglify custom js files
+    uglify: {
+      all_src : {
+        //options : {
+        //  sourceMap : true,
+        //  sourceMapName : 'sourceMap.map'
+        //},
+        src : SRC_PATH + 'js/custom/**/*.js',
+        dest : BUILD_DIR + 'custom.min.js'
+      }
+    },
+
+    //replace multiple <script> and <link> tags with minified files
+    processhtml: {
+      dist: {
+        files: {
+          'src/main/resources/static/index.html': ['src/main/resources/static/index.html']
         }
       }
     },
@@ -111,6 +132,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-maven');
+  grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
   //Automatically load grunt tasks from package.json
@@ -118,6 +141,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint']);
 
-  grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'requirejs', 'copy']);
+  grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'requirejs', 'uglify', 'copy', 'processhtml']);
 
 };

@@ -71,7 +71,6 @@
             <version>1.1</version>
         </dependency>
 
-
     </dependencies>
 
     <build>
@@ -80,6 +79,28 @@
         <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+
+        <plugin>
+            <groupId>pl.allegro</groupId>
+            <artifactId>grunt-maven-plugin</artifactId>
+            <version>1.5.0</version>
+
+            <configuration>
+            <!-- relative to src/main/webapp/, default: static -->
+            <jsSourceDirectory>WEB-INF</jsSourceDirectory>
+            <gruntBuildDirectory>${project.basedir}</gruntBuildDirectory>
+            </configuration>
+
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>npm</goal><!-- runs npm install -->
+                        <goal>bower</goal><!-- runs bower install -->
+                        <goal>grunt</goal><!-- runs grunt -->
+                    </goals>
+                </execution>
+            </executions>
         </plugin>
 
         <!--<plugin>-->
