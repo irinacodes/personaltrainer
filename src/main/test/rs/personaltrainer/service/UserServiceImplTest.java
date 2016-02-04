@@ -45,21 +45,21 @@ public class UserServiceImplTest {
         return user;
     }
 
-    @Test
-    public void shouldSaveNewUser_GivenThereExistsOneWithTheSameId_ThenTheExceptionShouldBeThrown() throws Exception {
-        stubRepositoryToReturnExistingUser();
-        try {
-            userService.create(UserUtil.createUser());
-            fail("Expected exception");
-        } catch (UserAlreadyExistsException ignored) {
-        }
-        verify(userRepository, never()).save(any(User.class));
-    }
+//    @Test
+//    public void shouldSaveNewUser_GivenThereExistsOneWithTheSameId_ThenTheExceptionShouldBeThrown() throws Exception {
+//        stubRepositoryToReturnExistingUser();
+//        try {
+//            userService.create(UserUtil.createUser());
+//            fail("Expected exception");
+//        } catch (UserAlreadyExistsException ignored) {
+//        }
+//        verify(userRepository, never()).save(any(User.class));
+//    }
 
-    private void stubRepositoryToReturnExistingUser() {
-        final User user = UserUtil.createUser();
-        when(userRepository.findOne(user.getId())).thenReturn(user);
-    }
+//    private void stubRepositoryToReturnExistingUser() {
+//        final User user = UserUtil.createUser();
+//        when(userRepository.findOne(user.getId())).thenReturn(user);
+//    }
 
     @Test
     public void shouldListAllUsers_GivenThereExistSome_ThenTheCollectionShouldBeReturned() throws Exception {

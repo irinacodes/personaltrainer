@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'src/main/resources/static/personatrainer.min.css': [ SRC_PATH + 'css/*.css' ]
+          'src/main/resources/static/personaltrainer.min.css': [ SRC_PATH + 'css/*.css' ]
         }
       }
     },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: SRC_PATH + 'img',
           src: '{,*/}**/*.{png,jpg,jpeg}',
-          dest: BUILD_DIR + 'images'
+          dest: BUILD_DIR + 'img'
         }]
       }
     },
@@ -103,7 +103,8 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'src/main/resources/static/index.html': ['src/main/resources/static/index.html']
+          'src/main/resources/static/index.html': ['src/main/resources/static/index.html'],
+          'src/main/resources/static/login.html': ['src/main/resources/static/login.html']
         }
       }
     },
