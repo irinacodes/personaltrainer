@@ -67,6 +67,18 @@ module.exports = function(grunt) {
             dest: BUILD_DIR,    // destination folder
             expand: true,           // required when using cwd
             flatten: false // keep directory structure
+          },
+          { cwd: SRC_PATH,  // set working folder / root to copy
+            src: ['js/**'],           // copy all html files
+            dest: BUILD_DIR,    // destination folder
+            expand: true,           // required when using cwd
+            flatten: false // keep directory structure
+          },
+          { cwd: SRC_PATH,  // set working folder / root to copy
+            src: ['css/**'],           // copy all html files
+            dest: BUILD_DIR,    // destination folder
+            expand: true,           // required when using cwd
+            flatten: false // keep directory structure
           }
         ]
       }

@@ -61,9 +61,14 @@ public class User {
 
     public User() {}
 
-    public User(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public User(String loginname, String password, String email) {
+        this.loginname = loginname;
+        this.hashedPassword = password;
+        this.created = new Date();
+        this.updated = new Date();
+        this.enabled = true;
+        this.role = Role.ADMIN;
+        this.email = email;
     }
 
     public Integer getId() {

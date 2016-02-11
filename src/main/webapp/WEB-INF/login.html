@@ -2,20 +2,19 @@
 <html>
     <meta charset="UTF-8">
     <title>Login Page</title>
-    <!-- build:js libraries.min.js -->
-    <script src="js/lib/jquery/dist/jquery.min.js"></script>
-    <script src="js/lib/jquery.cookie/jquery.cookie.js"></script>
-    <!-- /build -->
-    <!-- build:js custom.min.js -->
-    <script src="js/custom/login.js"></script>
-    <script src="js/custom/utils.js"></script>
-    <!-- /build -->
+
 </head>
 <body>
 <form id="loginform" name="loginform">
-    <label for="username">Username: </label><input id="username" name="username"><br/>
-    <label for="password">Password:</label><input id="password" name="password"><br/>
+    <label for="username">Username: </label><input type="text" id="username" name="username"><br/>
+    <label for="password">Password:</label><input type="password" id="password" name="password"><br/>
     <button type="submit">Login!</button>
 </form>
+
+<script src="js/lib/jquery/dist/jquery.min.js"></script>
+<script src="js/lib/jquery.cookie/jquery.cookie.js"></script>
+<script src="js/custom/login.js"></script>
+
+
 </body>
 </html>
