@@ -154,6 +154,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint']);
 
+  grunt.registerTask('donothing', []);
+
   grunt.registerTask('default', ['mavenPrepare', 'jshint', 'cssmin', 'imagemin', 'requirejs', 'uglify', 'copy', 'processhtml']);
 
 };
