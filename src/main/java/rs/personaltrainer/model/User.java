@@ -19,12 +19,12 @@ public class User {
     @Column
     private String surname;
 
-    @Column(nullable=false, updatable = false, unique = true)
+    @Column(nullable = false, updatable = false, unique = true)
     private String email;
 
     @Column
     @NotNull(message = "error.loginname.notnull")
-    @Size(min = 3, max = 30,  message = "error.loginname.size")
+    @Size(min = 3, max = 30, message = "error.loginname.size")
     private String loginname;
 
     @NotNull
@@ -32,11 +32,20 @@ public class User {
     @Column(name = "password_hash", nullable = false)
     private String hashedPassword;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Date created;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Date updated;
+//Grad u kom stanuje korisnik
+    @Column
+    private String city;
+//Ovde treba radio button, sta da koristim, Integer ili String?
+    //@Column
+    //private
+//Teretana u koju ide korisnik
+    @Column
+    private String gym;
 
     @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -48,7 +57,7 @@ public class User {
     @Column
     Boolean verified;
 
-    @OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserDetail userDetail;
 
     public Boolean isEnabled() {
@@ -59,16 +68,23 @@ public class User {
         this.enabled = enabled;
     }
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String loginname, String password, String email) {
-        this.loginname = loginname;
-        this.hashedPassword = password;
-        this.created = new Date();
-        this.updated = new Date();
-        this.enabled = true;
-        this.role = Role.ADMIN;
+    public User(String name, String surname, String email, String loginname, String hashedPassword, Date created, Date updated, String city, String gym, Role role, Boolean enabled, Boolean verified, UserDetail userDetail) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
+        this.loginname = loginname;
+        this.hashedPassword = hashedPassword;
+        this.created = created;
+        this.updated = updated;
+        this.city = city;
+        this.gym = gym;
+        this.role = role;
+        this.enabled = enabled;
+        this.verified = verified;
+        this.userDetail = userDetail;
     }
 
     public Integer getId() {
@@ -78,12 +94,15 @@ public class User {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -150,6 +169,26 @@ public class User {
 
     public void setVerified(Boolean verified) {
         this.verified = verified;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getGym() {
+        return gym;
+    }
+
+    public void setGym(String gym) {
+        this.gym = gym;
     }
 
     @Override
