@@ -1,13 +1,10 @@
 package rs.personaltrainer;
 
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import rs.personaltrainer.model.User;
-import rs.personaltrainer.repository.UserRepository;
 import rs.personaltrainer.restsecurity.ApplicationSecurity;
 
 @SpringBootApplication
