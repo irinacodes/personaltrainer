@@ -37,15 +37,6 @@ public class User {
 
     @Column(nullable = false)
     private Date updated;
-//Grad u kom stanuje korisnik
-    @Column
-    private String city;
-//Ovde treba radio button, sta da koristim, Integer ili String?
-    //@Column
-    //private
-//Teretana u koju ide korisnik
-    @Column
-    private String gym;
 
     @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -79,8 +70,6 @@ public class User {
         this.hashedPassword = hashedPassword;
         this.created = created;
         this.updated = updated;
-        this.city = city;
-        this.gym = gym;
         this.role = role;
         this.enabled = enabled;
         this.verified = verified;
@@ -174,23 +163,6 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getGym() {
-        return gym;
-    }
-
-    public void setGym(String gym) {
-        this.gym = gym;
-    }
-
     @Override
     public String toString() {
         return "User [id=" + id + ", loginname=" + loginname + "]";

@@ -10,10 +10,10 @@ public class UserDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //Izmena imena
+//Izmena imena
     @Column
     private String name;
-    //Izmena prezimena
+//Izmena prezimena
     @Column
     private String surname;
 
@@ -28,15 +28,10 @@ public class UserDetail {
 
     @Column(nullable = false)
     private Date updated;
-    //Grad u kom stanuje korisnik
+//Grad u kom stanuje korisnik
     @Column
     private String city;
-
-//Ovde treba radio button, sta da koristim, Integer ili String?
-    //@Column
-    //private
-
-    //Teretana u koju ide korisnik
+//Teretana u koju ide korisnik
     @Column
     private String gym;
 
