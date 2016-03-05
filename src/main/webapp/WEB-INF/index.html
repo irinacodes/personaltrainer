@@ -1,455 +1,1128 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- Basic -->
+    <title>Personal Trainer</title>
 
-    <title>Life style</title>
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-    <link href="css/login.css" rel="stylesheet">
-    <link href="css/jquerytiptip.css" rel="stylesheet" type="text/css">
-    <link href="js/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/agency.css" rel="stylesheet">
-    <link href="js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+
+
+    <link rel="stylesheet" type="text/css" href="asset/css/highlight.css">
+
+    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap-switch.css">
+
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/jade.css" title="jade" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/green.css" title="green" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/blue.css" title="blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/beige.css" title="beige" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/cyan.css" title="cyan" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/orange.css" title="orange" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/peach.css" title="peach" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/pink.css" title="pink" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/purple.css" title="purple" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/sky-blue.css" title="sky-blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/jquery-ui.css">
+
+
+    <!-- Margo JS  -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="js/modernizrr.js"></script>
+    <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+    <script type="text/javascript" src="js/count-to.js"></script>
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <!--switch button-->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+
+
+
+    <!--Date picker-->
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1950:2013'
+            });
+        });
+    </script>
+
+    <!--pol-->
+    <script>
+        $(function() {
+            $('#pol').bootstrapToggle({
+                on: 'MALE',
+                off: 'FEMALE',
+                width: 264,
+                height: 47
+            });
+        })
+    </script>
+
+
+
+
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 </head>
 
-<body id="page-top">
+<body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <a class="navbar-brand page-scroll" href="#page-top">LIFE STYLE</a>
+<!-- Full Body Container -->
+<div id="container">
+
+
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
+
+        <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details">
+                            <li><a href="#"><i class="fa fa-map-marker"></i>Lokacija</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>email</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-phone"></i>broj telefona</a>
+                            </li>
+                        </ul>
+                        <!-- End Contact Info -->
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li>
+                                <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            </li>
+                            <li>
+                                <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                            </li>
+                            <li>
+                                <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                            </li>
+                            <li>
+                                <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
         </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll" href="#types">Types of bodies</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#bord">Board</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Sign in</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
 
-<!-- Header -->
-<header>
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-heading">
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="index.html">
+                        <!--lOGO-->
+                        <img alt="" src=""><p>LOGO PERSONAL TRAINER</p>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="login">
-            <form id="loginform" name="loginform">
-                <input type="text" placeholder="username" name="username" id="username"><br>
-                <input type="password" placeholder="password" name="password" id="password"><br>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
-</header>
+        <!-- End Header Logo & Naviagtion -->
 
-<!-- Services Section -->
-<section id="types">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Types of bodies</h2>
+    </header>
+    <!-- End Header Section -->
 
-                <h3 class="section-subheading text-muted">Find out your body type</h3>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="img/images/ectomorph.jpg">
-                <h4 class="service-heading">ECTOMORPH</h4>
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                    architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="img/images/endomorph.jpg">
-                <h4 class="service-heading">ENDOMORPH</h4>
+    <!-- Start Home Page Slider -->
+    <section id="home">
+        <!-- Carousel -->
+        <div id="main-slide" class="carousel slide" data-ride="carousel">
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                    architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="img/images/mesomorph.jpg">
-                <h4 class="service-heading">MESOMORPH</h4>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slide" data-slide-to="1"></li>
+                <li data-target="#main-slide" data-slide-to="2"></li>
+            </ol>
+            <!--/ Indicators end-->
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                    architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About us -->
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">About</h2>
-
-                <h3 class="section-subheading text-muted">Expert team</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="img/images/Emil-Pavelkic.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Emil Pavelkić</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                    vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="img/images/Mateja.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Mateja Lazarević</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                    vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="img/images/Vanja.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Vanja Cerimagić</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                    vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="img/images/Tamara.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Tamara Cvetinović</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                    vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h3>Be Part
-                                <br>Of Our
-                                <br>Team!
-                                <br>Send your
-                                <br>CV
+            <!-- Carousel inner -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h2 class="animated2">
+                                <span>Welcome to <strong>Personal Trainer</strong></span>
+                            </h2>
+                            <h3 class="animated3">
+                                <span>The ultimate app for your healt</span>
                             </h3>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Board -->
-<section id="bord" class="bg-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Board</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img src="img/images/Irina.jpg"
-                         class="img-responsive img-circle" alt="">
-                    <h4>Irina Branović</h4>
-
-                    <p class="text-muted">CTO</p>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img src="img/images/Konstantin.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Konstantin Pavlović</h4>
-
-                    <p class="text-muted">CEO</p>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                    laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Advertising -->
-<aside class="clients">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</aside>
-
-<!-- Sign in Section -->
-<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Sign in</h2>
-
-                <h3 class="section-subheading text-muted">If you want to do something, do it like a pro</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!--video clips-->
-                        <embed width="420" height="315" src="https://www.youtube.com/watch?v=c5X4-pCDy94"></embed>
-                        <iframe width="420" height="315" src="https://www.youtube.com/watch?v=c5X4-pCDy94"></iframe>
-                        <iframe width="420" height="315" src="https://www.youtube.com/watch?v=c5X4-pCDy94"></iframe>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First name *" id="firstName"
-                                   required data-validation-required-message="Please enter your first name.">
-
-                            <p class="help-block text-danger"></p>
+                </div>
+                <!--/ Carousel item end -->
+                <div class="item">
+                    <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h2 class="animated4">
+                                <span><strong>Personal trainer</strong>is for the bravest</span>
+                            </h2>
+                            <h3 class="animated5">
+                                <span>The Key of your Success</span>
+                            </h3>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last name *" id="lastName" required
-                                   data-validation-required-message="Please enter your last name.">
-
-                            <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+                <div class="item">
+                    <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h2 class="animated7 white">
+                                <span>The way of <strong>Success is inside you</strong></span>
+                            </h2>
+                            <h3 class="animated8 white">
+                                <span>Why you are waiting</span>
+                            </h3>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email *" id="email" required
-                                   data-validation-required-message="Please enter your email adress.">
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+            </div>
+            <!-- Carousel inner end-->
+        </div>
+        <!-- /carousel -->
+    </section>
+    <!-- End Home Page Slider -->
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password *"
-                                   required data-validation-required-message="Please enter your password.">
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="re-Password *" id="re-password"
-                                   required data-validation-required-message="Please enter your password.">
+    <!-- Start Services Section -->
+    <div class="section service">
+        <div class="container">
+            <div class="row">
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Height *" id="height" required
-                                   data-validation-required-message="Please enter your height.">
+                <!-- Start Service Icon 1 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
+                    <div class="service-icon">
+                        <img src="images/img/ectomorph.jpg">
+                    </div>
+                    <div class="service-content">
+                        <h4>ECTOMORPH</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Weight *" id="weight" required
-                                   data-validation-required-message="Please enter your weight.">
+                    </div>
+                </div>
+                <!-- End Service Icon 1 -->
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Country *" id="country" required
-                                   data-validation-required-message="Please enter your country.">
+                <!-- Start Service Icon 2 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="02">
+                    <div class="service-icon">
+                        <img src="images/img/endomorph.jpg">
+                    </div>
+                    <div class="service-content">
+                        <h4>ENDOMORPH</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 2 -->
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="City *" id="city" required
-                                   data-validation-required-message="Please enter your city.">
+                <!-- Start Service Icon 3 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
+                    <div class="service-icon">
+                        <img src="images/img/mesomorph.jpg">
+                    </div>
+                    <div class="service-content">
+                        <h4>MESOMORPH</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 3 -->
 
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Gym *" id="gym" required
-                                   data-validation-required-message="Please enter your gym.">
+                <!-- Start Service Icon 4 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
+                    <div class="service-icon">
+                        <i class="fa fa-code icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>neki text</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 4 -->
 
-                            <p class="help-block text-danger"></p>
+                <!-- Start Service Icon 4 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
+                    <div class="service-icon">
+                        <i class="fa fa-code icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>neki text</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 4 -->
+
+                <!-- Start Service Icon 8 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="08">
+                    <div class="service-icon">
+                        <i class="fa fa-umbrella icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>neki text</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 8 -->
+
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- End Services Section -->
+
+    <!-- Start Portfolio Section -->
+    <div class="section full-width-portfolio" style="border-top:0; border-bottom:0; background:#fff;">
+
+        <!-- Start Big Heading -->
+        <div class="big-title text-center" data-animation="fadeInDown" data-animation-delay="01">
+            <h1>Video klipovi vladice i <strong>filipa</strong></h1>
+        </div>
+        <!-- End Big Heading -->
+
+        <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+            <br/>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+
+        <!-- Start Recent Projects Carousel -->
+        <ul id="portfolio-list" data-animated="fadeIn">
+            <li>
+                <img src="images/portfolio-1/1.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Town winter 2013</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/2.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Quarterly Musashino</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/3.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Mainichi April 2014</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/4.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Shitamachi Rocket</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/5.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Majesty express vol. 01</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/6.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/7.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/8.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/9.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/10.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/11.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+            <li>
+                <img src="images/portfolio-1/12.png" alt="" />
+                <div class="portfolio-item-content">
+                    <span class="header">Monocle issue 69</span>
+                    <p class="body">web develpment, design</p>
+                </div>
+                <a href="#"><i class="more">+</i></a>
+
+            </li>
+        </ul>
+
+        <!-- End Recent Projects Carousel -->
+
+
+    </div>
+    <!-- End Portfolio Section -->
+
+
+
+
+
+    <!-- Start Team Member Section -->
+    <div class="section" style="background:#fff;">
+        <div class="container">
+
+            <!-- Start Big Heading -->
+            <div class="big-title text-center" data-animation="fadeInDown" data-animation-delay="01">
+                <h1>Our Great <strong>Team</strong></h1>
+            </div>
+            <!-- End Big Heading -->
+
+            <!-- Some Text -->
+            <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <span class="accent-color sh-tooltip" data-placement="right" title="Simple Tooltip">doloremque laudantium</span>, totam rem aperiam, eaque ipsa quae ab illo inventore
+                <br/>veritatis et quasi <span class="accent-color sh-tooltip" data-placement="bottom" title="Simple Tooltip">architecto</span> beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+
+            <!-- Start Team Members -->
+            <div class="row">
+
+                <!-- Start Memebr 1 -->
+                <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="03">
+                    <div class="team-member modern">
+                        <!-- Memebr Photo, Name & Position -->
+                        <div class="member-photo">
+                            <img alt="" src="images/img/Vladica.jpg" />
+                            <div class="member-name">Vladica Jovanovic<span>Bodybuilding</span>
+                            </div>
                         </div>
-                        <div id="default-settings"></div>
-                        <!--datepicker jquery-->
-                        <script>
-                            $("#default-settings").birthdayPicker();
-                            $("#default-birthday").birthdayPicker({"defaultDate": "01-03-1980"});
-                            $("#max-year-birthday").birthdayPicker({
-                                "defaultDate": "01-03-1980",
-                                "maxYear": "2020",
-                                "maxAge": 65
-                            });
-                            $("#short-month-birthday").birthdayPicker({
-                                "defaultDate": "01-03-1980",
-                                "maxYear": "2020",
-                                "maxAge": 65,
-                                "monthFormat": "short"
-                            });
-                            $("#long-month-birthday").birthdayPicker({
-                                "defaultDate": "01-03-1980",
-                                "maxYear": "2020",
-                                "maxAge": 65,
-                                "monthFormat": "long",
-                                "sizeClass": "span3"
-                            });
-                        </script>
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <div>
-                                    <label>
-                                        <input type="radio" id="q128" name="quality[21]" value="1"/>Male</label>
-                                    <label>
-                                        <input type="radio" id="q129" name="quality[21]" value="2"/>Female</label>
-                                </div>
+                        <!-- Memebr Words -->
+                        <div class="member-info">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                        </div>
+                        <!-- Start Progress Bar 1 -->
+                        <div class="progress-label">Bodybuilding</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                                <span class="percentage">100%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 2 -->
+                        <div class="progress-label">Fitness</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                                <span class="percentage">85%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 3 -->
+                        <div class="progress-label">Nesto</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                                <span class="percentage">100%</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Social Links -->
+                        <div class="member-socail">
+                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                            <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Memebr 1 -->
+
+                <!-- Start Memebr 2 -->
+                <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="04">
+                    <div class="team-member modern">
+                        <!-- Memebr Photo, Name & Position -->
+                        <div class="member-photo">
+                            <img alt="" src="images/img/Filip.jpg" />
+                            <div class="member-name">Filip Volsek<span>Sport</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Words -->
+                        <div class="member-info">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                        </div>
+                        <!-- Start Progress Bar 1 -->
+                        <div class="progress-label">Bodybuilding</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                                <span class="percentage">96%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 2 -->
+                        <div class="progress-label">Fitness</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                                <span class="percentage">88%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 3 -->
+                        <div class="progress-label">Nesto</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                                <span class="percentage">100%</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Social Links -->
+                        <div class="member-socail">
+                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                            <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Memebr 2 -->
+
+                <!-- Start Memebr 3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="05">
+                    <div class="team-member modern">
+                        <!-- Memebr Photo, Name & Position -->
+                        <div class="member-photo">
+                            <img alt="" src="images/team/face_3.png" />
+                            <div class="member-name">Neko<span>Joga</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Words -->
+                        <div class="member-info">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                        </div>
+                        <!-- Start Progress Bar 1 -->
+                        <div class="progress-label">Bodybulding</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                                <span class="percentage">96%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 2 -->
+                        <div class="progress-label">Fitness</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="94%" data-appear-animation-delay="800">
+                                <span class="percentage">94%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 3 -->
+                        <div class="progress-label">Nesto</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="90%" data-appear-animation-delay="1200">
+                                <span class="percentage">90%</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Social Links -->
+                        <div class="member-socail">
+                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                            <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Memebr 3 -->
+
+                <!-- Start Memebr 4 -->
+                <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="06">
+                    <div class="team-member modern">
+                        <!-- Memebr Photo, Name & Position -->
+                        <div class="member-photo">
+                            <img alt="" src="images/team/face_4.png" />
+                            <div class="member-name">Devojka<span>BikiniFitness</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Words -->
+                        <div class="member-info">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                        </div>
+                        <!-- Start Progress Bar 1 -->
+                        <div class="progress-label">Bodybuilding</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                                <span class="percentage">96%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 2 -->
+                        <div class="progress-label">Fitness</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="85%" data-appear-animation-delay="800">
+                                <span class="percentage">85%</span>
+                            </div>
+                        </div>
+                        <!-- Start Progress Bar 3 -->
+                        <div class="progress-label">Nesto</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                                <span class="percentage">100%</span>
+                            </div>
+                        </div>
+                        <!-- Memebr Social Links -->
+                        <div class="member-socail">
+                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                            <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Memebr 4 -->
+
+            </div>
+            <!-- End Team Members -->
+
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- End Team Member Section -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <role class="form">
+                    <h2>Please Sign Up <small>It's free and always will be.</small></h2>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="first_name" id="first_Name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
                             </div>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
-                    <div class="col-lg-12 text-right">
-                        <div id="success"></div>
-                        <button type="submit" class="btn btn-xl">Sign in</button>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="1">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="confirm_email" id="confirm_email" class="form-control input-lg" placeholder="Confirm email" tabindex="2">
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="password" id="#" class="form-control input-lg" placeholder="Password" tabindex="3">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="number" name="height" id="height" class="form-control input-lg" placeholder="Height" tabindex="5">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="number" name="kg" id="kg" class="form-control input-lg" placeholder="Kg" tabindex="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="date" id="datepicker" class="form-control input-lg" placeholder="Date" tabindex="7">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label for="pol"></label><input type="checkbox" name="pol" id="pol" class="form-control input-lg" data-onstyle="primary" data-offstyle="danger" tabindex="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="city" id="city" class="form-control input-lg" placeholder="City" tabindex="9">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="gym" id="gym" class="form-control input-lg" placeholder="Gym" tabindex="10">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <input id="register" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="11">
+                    </div>
+                </role>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Start Pricing Table Section -->
+    <div class=" section pricing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Start Big Heading -->
+                    <div class="big-title text-center">
+                        <h1>We Have Nice Pricing Plans For <strong>You!</strong></h1>
+                    </div>
+                    <!-- End Big Heading -->
+
+                    <!-- Text -->
+                    <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                 </div>
             </div>
+
+            <div class="row pricing-tables">
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="plan-name">
+                            <h3>merenje masti</h3>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-value">$49<span>.00</span></div>
+                            <div class="interval">per month</div>
+                        </div>
+                        <div class="plan-list">
+                            <ul>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                            </ul>
+                        </div>
+                        <div class="plan-signup">
+                            <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="pricing-table highlight-plan">
+                        <div class="plan-name">
+                            <h3>pRILAGODJAVANJE TRENINGA</h3>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-value">$99<span>.00</span></div>
+                            <div class="interval">per month</div>
+                        </div>
+                        <div class="plan-list">
+                            <ul>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                                <li><strong>nesto</strong> nesto</li>
+                            </ul>
+                        </div>
+                        <div class="plan-signup">
+                            <a href="#" class="btn-system btn-small border-btn">Sign Up Now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="plan-name">
+                            <h3>Professional</h3>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-value">$199<span>.00</span></div>
+                            <div class="interval">per month</div>
+                        </div>
+                        <div class="plan-list">
+                            <ul>
+                                <li><strong>40 GB</strong> Storage</li>
+                                <li><strong>40GB</strong> Transfer</li>
+                                <li><strong>10</strong> Domains</li>
+                                <li><strong>20</strong> Projects</li>
+                                <li><strong>Free</strong> installation</li>
+                            </ul>
+                        </div>
+                        <div class="plan-signup">
+                            <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="plan-name">
+                            <h3>Extreme</h3>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-value">$299<span>.00</span></div>
+                            <div class="interval">per month</div>
+                        </div>
+                        <div class="plan-list">
+                            <ul>
+                                <li><strong>40 GB</strong> Storage</li>
+                                <li><strong>40GB</strong> Transfer</li>
+                                <li><strong>10</strong> Domains</li>
+                                <li><strong>20</strong> Projects</li>
+                                <li><strong>Free</strong> installation</li>
+                            </ul>
+                        </div>
+                        <div class="plan-signup">
+                            <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
-</section>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Life Style 2015</span>
+    <!-- End Pricing Table Section -->
+
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row footer-widgets">
+
+
+                <!-- Start Subscribe & Social Links Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget social-widget">
+                        <h4>Follow Us<span class="head-line"></span></h4>
+                        <ul class="social-icons">
+                            <li>
+                                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            </li>
+                            <li>
+                                <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                            </li>
+                            <li>
+                                <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                            </li>
+                            <li>
+                                <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Subscribe & Social Links Widget -->
+
+
+                <!-- Start Twitter Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget twitter-widget">
+                        <h4>Twitter Feed<span class="head-line"></span></h4>
+                        <ul>
+                            <li>
+                                <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                <span>28 February 2014</span>
+                            </li>
+                            <li>
+                                <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
+                                <span>26 February 2014</span>
+                            </li>
+                            <li>
+                                <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                <span>28 February 2014</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Twitter Widget -->
+
+
+                <!-- Start Flickr Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget flickr-widget">
+                        <h4>Flicker Feed<span class="head-line"></span></h4>
+                        <ul class="flickr-list">
+                            <li>
+                                <a href="images/flickr-01.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-01.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-02.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-02.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-03.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-03.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-04.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-04.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-05.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-05.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-06.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-06.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-07.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-07.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-08.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-08.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-09.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-09.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Flickr Widget -->
+
+
+                <!-- Start Contact Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget contact-widget">
+                        <h4><img src="images/" class="img-responsive" alt="Footer Logo" />Logo Personal trainer</h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <ul>
+                            <li><span>Phone Number:</span> +01 234 567 890</li>
+                            <li><span>Email:</span> company@company.com</li>
+                            <li><span>Website:</span> www.yourdomain.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Contact Widget -->
+
+
             </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
+            <!-- .row -->
+
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2016 Personal Trainer</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
             </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li><a href="#">Privacy Policy</a>
-                    </li>
-                    <li><a href="#">Terms of Use</a>
-                    </li>
-                </ul>
-            </div>
+            <!-- End Copyright -->
+
         </div>
+    </footer>
+    <!-- End Footer Section -->
+
+
+</div>
+<!-- End Full Body Container -->
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<div id="loader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
     </div>
-</footer>
+</div>
 
-<script src="js/lib/jquery/dist/jquery.min.js"></script>
-<script src="js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/lib/jquery.easing/js/jquery.easing.min.js"></script>
-<script src="js/lib/jquery-birthday-picker/jquery-birthday-picker.js"></script>
-<script src="js/lib/jquery.cookie/jquery.cookie.js"></script>
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="js/lib/html5shiv/dist/html5shiv.min.js"></script>
-<script src="js/lib/respond/dest/respond.min.js"></script>
-<script src="js/lib/jqBootstrapValidation/dist/jqBootstrapValidation-1.3.7.min.js"></script>
-<![endif]-->
+<!-- Style Switcher -->
+<div class="switcher-box">
+    <a class="open-switcher show-switcher"><i class="fa fa-cog fa-2x"></i></a>
+    <h4>Login</h4>
+    <form role="form">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+    </form>
+    <form role="form">
+        <div class="form-group">
+            <input type="text" class="form-control" id="password" placeholder="Enter Password">
+        </div>
+    </form>
+    <p>Forgot your password?</p>
+    <span id="dugmeLogin" class="label label-primary">Login in</span>
+</div>
 
-<script src="js/custom/classie.js"></script>
-<script src="js/custom/cbpAnimatedHeader.js"></script>
-<script src="js/custom/contact_me.js"></script>
-<script src="js/custom/login.js"></script>
-<script src="js/custom/utils.js"></script>
-
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 
