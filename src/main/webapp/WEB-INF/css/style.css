@@ -870,6 +870,7 @@ ul.social-list li:last-child a i {
 
 #main-slide .carousel-indicators {
 	bottom: 30px;
+	visibility: hidden;
 }
 
 .carousel-indicators li{
@@ -2719,6 +2720,7 @@ ul.icons-list li i {
 	-webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
+	background-color: #D9534F;
 }
 
 .team-member .member-info {
