@@ -5763,4 +5763,13 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 box-shadow: none;
 }
 
+/*social icons*/
+#icons{
+	color: white;
+}
+
+/*position social icons header*/
+.socialposition{
+	float: right;
+}
 
