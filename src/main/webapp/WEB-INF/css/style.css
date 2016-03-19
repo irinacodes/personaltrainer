@@ -2705,7 +2705,7 @@ ul.icons-list li i {
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
 	background-color: #444;
-	z-index: 9994;
+
 }
 
 .team-member .member-photo .member-name span {
@@ -5773,3 +5773,13 @@ box-shadow: none;
 	float: right;
 }
 
+/*BUTTON*/
+#dugme{
+	width: 100%;
+}
+
+/*switch*/
+#switch{
+	width: 100%;
+
+}
