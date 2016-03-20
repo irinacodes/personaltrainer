@@ -43,10 +43,10 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User create(@NotNull @Valid final User user) {
         LOGGER.debug("Creating {}", user);
-        User existing = repository.findOne(user.getId());
-        if (existing != null) {
-            throw new UserAlreadyExistsException(String.format("There already exists a user with id=%s", user.getId()));
-        }
+//        User existing = repository.findOne(user.getId());
+//        if (existing != null) {
+//            throw new UserAlreadyExistsException(String.format("There already exists a user with id=%s", user.getId()));
+//        }
         user.setHashedPassword(new BCryptPasswordEncoder().encode(user.getHashedPassword()));
         return repository.save(user);
     }

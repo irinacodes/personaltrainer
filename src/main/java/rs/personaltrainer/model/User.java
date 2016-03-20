@@ -1,21 +1,17 @@
 package rs.personaltrainer.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
+@Table(name = "PERSONALTRAINER_USER")
 public class User {
 
-    @Id @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @NotNull
-    @Size(max = 64)
-    @Column(nullable = false, updatable = false)
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column
     private String name;
@@ -23,12 +19,12 @@ public class User {
     @Column
     private String surname;
 
-    @Column(nullable=false, updatable = false, unique = true)
+    @Column(nullable = false, updatable = false, unique = true)
     private String email;
 
     @Column
-    @NotNull(message = "error.title.notnull")
-    @Size(min = 3, max = 30,  message = "error.title.size")
+    @NotNull(message = "error.loginname.notnull")
+    @Size(min = 3, max = 30, message = "error.loginname.size")
     private String loginname;
 
     @NotNull
@@ -36,37 +32,66 @@ public class User {
     @Column(name = "password_hash", nullable = false)
     private String hashedPassword;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Date created;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Date updated;
 
     @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column
+    private Boolean enabled;
 
-    public User() {}
+    @Column
+    Boolean verified;
 
-    public User(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private UserDetail userDetail;
+
+    public Boolean isEnabled() {
+        return enabled;
     }
 
-    public String getId() {
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public User() {
+    }
+
+    public User(String name, String surname, String email, String loginname, String hashedPassword, Date created, Date updated, String city, String gym, Role role, Boolean enabled, Boolean verified, UserDetail userDetail) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.loginname = loginname;
+        this.hashedPassword = hashedPassword;
+        this.created = created;
+        this.updated = updated;
+        this.role = role;
+        this.enabled = enabled;
+        this.verified = verified;
+        this.userDetail = userDetail;
+    }
+
+    public Integer getId() {
         return id;
     }
 
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -119,6 +144,25 @@ public class User {
         this.role = role;
     }
 
+    public UserDetail getUserDetail() {
+        return userDetail;
+    }
+
+    public void setUserDetail(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
+
+    public Boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(Boolean verified) {
+        this.verified = verified;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     @Override
     public String toString() {
         return "User [id=" + id + ", loginname=" + loginname + "]";
