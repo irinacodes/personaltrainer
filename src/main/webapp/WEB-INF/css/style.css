@@ -5783,3 +5783,25 @@ box-shadow: none;
 	width: 100%;
 
 }
+
+/*video klip pretstravljanje*/
+#klip{
+	padding-top: 10px;
+}
+/*kategorija u education*/
+#category{
+	padding-top: 50px;
+}
+/*u profilu trenera slika ide desno*/
+#profileTrainer{
+	float: right;
+}
+/*u profilu trenera slika ide levo*/
+#imageProfileTrainer{
+	float: left;
+	padding-right: 15px;
+}
+/*velicina slova pri registraciji*/
+#labeltypesofbodyes{
+	font-size: 21.8px;
+}
