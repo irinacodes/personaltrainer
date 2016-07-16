@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import rs.personaltrainer.exceptions.UserAlreadyExistsException;
 import rs.personaltrainer.model.User;
@@ -48,7 +47,6 @@ class UserController {
         return userService.getList();
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method=RequestMethod.DELETE, value="{id}")
     public void delete(@PathVariable String id) {
         userService.delete(id);

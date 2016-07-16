@@ -2,7 +2,6 @@ package rs.personaltrainer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.slf4j.Logger;
@@ -47,7 +46,6 @@ public class UserServiceImpl implements UserService {
 //        if (existing != null) {
 //            throw new UserAlreadyExistsException(String.format("There already exists a user with id=%s", user.getId()));
 //        }
-        user.setHashedPassword(new BCryptPasswordEncoder().encode(user.getHashedPassword()));
         return repository.save(user);
     }
 
