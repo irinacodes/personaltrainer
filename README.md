@@ -31,4 +31,4 @@ Setup for cloud continuous integration is in [*.travis.yml](https://github.com/p
 ###How to build and run the project
 Spring Boot project is run by running  
 ```mvn spring-boot:run```  
-from the project dir. You should see the app running at *localhost:8181*. If you want to change server port, you can find the setting in [application.properties] (https://github.com/probablyirina/personaltrainer/blob/master/src/main/resources/application.properties). 
+from the project dir. You should see the app running at *localhost:8181*. To change server port, modify setting in [application.properties] (https://github.com/probablyirina/personaltrainer/blob/master/src/main/resources/application.properties). 

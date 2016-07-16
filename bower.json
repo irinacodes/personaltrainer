@@ -7,40 +7,37 @@
   "dependencies": {
     "knockout": "~3.4.0",
     "bootstrap": "~3.3.5",
-    "jquery": "~2.1.4",
     "grunt": "~0.4.5",
     "underscore": "~1.8.3",
     "requirejs": "~2.1.22",
     "jquery-birthday-picker": "~1.0.0",
     "font-awesome": "~4.5.0",
-    "html5shiv": "~3.7.3",
     "respond": "~1.4.2",
     "jquery.easing": "~1.3.1",
     "jquery.cookie": "jquery-cookie#~1.4.1",
     "jqBootstrapValidation": "~1.3.7",
-    //dodati lib
     "bootstrap-switch": "~3.3.2",
     "bootstrap-social": "~1.0.0",
     "slicknav": "~1.0.3",
     "animate.css": "~3.5.0",
-    "colors": "~1.0.0",
-    "jquery-ui": "~1.11.3",
+    "colors": "2.0.0",
     "bootstrap-toggle": "~2.2.0",
-    "responsive": "-2.1.4",
+    "responsive": "~2.4.1",
     "jquery-migrate": "~1.2.1",
     "bootstrap": "~3.3.6",
     "jquery.fitvids": "~1.1.0",
     "owl.carousel": "~2.0.0",
     "nivo-lightbox": "~1.2.0",
-    "jquery.appear": "~1.0.0",
     "jquery.nicescroll": "~3.6.8",
-    "parallax": "~1.1.3",
+    "parallax": "2.1.3",
     "slicknav": "~1.0.5",
     "jquery-ui": "~1.11.4",
     "bootstrap-switch": "~3.3.2",
-    "bootstrap-toggle": "~2.2.0",
-
-
+    "bootstrap-toggle": "~2.2.0"
+  },
+  "resolutions": {
+    "jquery": "2.1.4",
+    "html5shiv": "3.7.3"
   },
   "ignore": [
     "test",
