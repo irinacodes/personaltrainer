@@ -1,0 +1,32 @@
+{
+  "name": "jquery-birthday-picker",
+  "title": "jquery-birthday-picker",
+  "description": "A jquery plugin for birthday. Forked from https://github.com/rithychhen88/birthday-picker",
+  "keywords": [
+   "birthday",
+        "jquery"
+  ],
+  "version": "1.0.0",
+  "author": {
+        "name": "LudoBermejo (using rithychhen88 code)",
+        "url": "http://www.ludobermejo.es"
+    },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://malsup.github.com/mit-license.txt"
+    },
+    {
+      "type": "GPL",
+      "url": "http://malsup.github.com/gpl-license-v2.txt"
+    }
+  ],
+   "bugs": "https://github.com/ludobermejo/jquery.birthday.picker/issues",
+    "homepage": "https://github.com/ludobermejo/jquery.birthday.picker",
+    "docs": "https://github.com/ludobermejo/jquery.birthday.picker",
+    "download": "https://github.com/ludobermejo/jquery.birthday.picker/jquery.birthday.picker.js",
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+}
+
