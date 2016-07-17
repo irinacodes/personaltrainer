@@ -1,19 +1,15 @@
 package rs.personaltrainer;
 
-import com.sun.prism.impl.Disposer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.List;
-
-import static com.sun.prism.impl.Disposer.*;
 
 @Controller
 @RequestMapping("/")
