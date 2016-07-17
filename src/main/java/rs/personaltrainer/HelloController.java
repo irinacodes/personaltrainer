@@ -30,6 +30,11 @@ public class HelloController {
         return "home";
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public String insertData(ModelMap model,
                              @ModelAttribute("insertRecord") @Valid Record record,
