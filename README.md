@@ -2,7 +2,7 @@
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ## Personal trainer
-Spring Boot/Data/Security, REST, Maven, Hibernate, Flyway, Grunt, Bower, Knockout, Requirejs app integrated with [Travis CI](https://travis-ci.org/) and deployed on [Heroku](https://www.heroku.com/) cloud.
+Spring Boot/Data/Security, REST, Maven, Hibernate, Flyway, Grunt, Bower, Knockout, Requirejs app integrated with [Travis CI](https://travis-ci.org/).
 
 ###Dev setup
 To start, you will need Java 7 or 8 installed. Project has been developed and tested on Linux; it might work on Windows but you are on your own.  
