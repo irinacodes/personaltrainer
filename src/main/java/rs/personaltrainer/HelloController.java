@@ -21,27 +21,27 @@ public class HelloController {
     public HelloController(RecordRepository repository) {
         this.repository = repository;
     }
-
-    @RequestMapping(method = RequestMethod.GET)
-    public String home(ModelMap model) {
-        List<Record> records = repository.findAll();
-        model.addAttribute("records", records);
-        model.addAttribute("insertRecord", new Record());
-        return "home";
-    }
+//
+//    @RequestMapping(method = RequestMethod.GET)
+//    public String home(ModelMap model) {
+//        List<Record> records = repository.findAll();
+//        model.addAttribute("records", records);
+//        model.addAttribute("insertRecord", new Record());
+//        return "home";
+//    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String index() {
         return "index";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String insertData(ModelMap model,
-                             @ModelAttribute("insertRecord") @Valid Record record,
-                             BindingResult result) {
-        if (!result.hasErrors()) {
-            repository.save(record);
-        }
-        return home(model);
-    }
+//    @RequestMapping(method = RequestMethod.POST, path="/")
+//    public String insertData(ModelMap model,
+//                             @ModelAttribute("insertRecord") @Valid Record record,
+//                             BindingResult result) {
+//        if (!result.hasErrors()) {
+//            repository.save(record);
+//        }
+//        return home(model);
+//    }
 }
