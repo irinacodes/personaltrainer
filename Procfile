@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar  target/personaltrainer-snapshot.jar
+web: java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT target/*.war
