@@ -5,46 +5,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-//@SpringBootApplication
-//public class Application {
-//
-//    @Bean
-//    public WebSecurityConfigurerAdapter webSecurityConfigurerAdapter() {
-//        return new ApplicationSecurity();
-//    }
-//
-//    public static void main(final String[] args) {
-//        SpringApplication.run(Application.class, args);
-//    }
-
-//    @Bean
-//    CommandLineRunner init(final UserRepository userRepository) {
-//
-//        return new CommandLineRunner() {
-//
-//            @Override
-//            public void run(String... arg0) throws Exception {
-//                userRepository.saveAndFlush(new User("lenny", "kravitz", "lenny@personaltrainer.rs"));
-//            }
-//
-//        };
-//
-//    }
-
-//}
+import java.util.Arrays;
 
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class Application {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
-    }
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+        String[] beanNames = ctx.getBeanDefinitionNames();
+        Arrays.sort(beanNames);
+        for (String beanName : beanNames) {
+            System.out.println(beanName);
+        }
     }
 
 }
