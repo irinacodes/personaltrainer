@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ultimate Trainer Studio</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--My css-->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+    <!--Jquery datepicker-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Ultimate Trainer Studio</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <form>
+                        <input placeholder="Email" style="border-color:#333" type="text" name="email">
+
+                    </form>
+                </li>
+                <li>
+                    <form>
+                        <input placeholder="Password" style="border-color:#333" type="text" name="password">
+                    </form>
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <a href="#" style="color: #fff; font-size: 10px;">Forgot passvord?</a>
+            <button class="btn btn-primary">Sign in</button>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('https://static1.squarespace.com/static/55384dc6e4b0a3d5e6f4555e/t/554be650e4b06fc2151470f0/1431037523456/');"></div>
+            <div class="carousel-caption">
+                <h2>Choose your body type</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('https://static1.squarespace.com/static/56eaf0f107eaa03f5dba0e5f/t/57108af6c2ea51282967b9ff/1461350221835/Athletes+block+starts+and+demonstration+of+athlete+individuality');"></div>
+            <div class="carousel-caption">
+                <h2>Choose your goal</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('http://www.genesisfitness.co.uk/sliders/04.png');"></div>
+            <div class="carousel-caption">
+                <h2>Choose your training</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('https://www.universalevents.com/Images/Carousel/EventOptions/CityWalk/2_BB_Cowfish-e.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Take your diet</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+    </a>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Sign up
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="form-group">
+                        <input type="firstName" class="form-control" placeholder="First Name">
+                        <input type="lastName" class="form-control" placeholder="Last Name">
+                        <input type="text" id="datepicker" class="form-control" placeholder="Birthday">
+                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="re-password" class="form-control" placeholder="re-Password">
+                        <input type="country" class="form-control" placeholder="Country">
+                        <input type="city" class="form-control" placeholder="City">
+                        <input type="radio" name="gender" value="Male"> Male
+                        <input type="radio" name="gender" value="Female"> Female
+                    </div>
+                    <button class="btn btn-primary">Sign up</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Step 1: Find out your body type</h4>
+                    <h4><i class="fa fa-fw fa-compass"></i> Step 2: Choose your goal</h4>
+                    <h4><i class="fa fa-fw fa-compass"></i> Step 3: Get training</h4>
+                    <h4><i class="fa fa-fw fa-compass"></i> Step 4: Get diet</h4>
+                    <h4><i class="fa fa-fw fa-compass"></i> Step 5: Change your life</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?</p>
+                </div>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    Learn more
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h3 class="modal-title" id="myModalLabel">Find out your body type</h3>
+                            </div>
+                            <div class="modal-body">
+                                <img  src="images/index/ectomorph.PNG">
+                                <img style="padding-left: 40px;" src="images/index/mesomorph.PNG">
+                                <img style="padding-left: 40px;" src="images/index/endomorph.PNG">
+                                <hr>
+                                <h3 class="modal-title" id="myModalLabel">Choose your goal</h3>
+                                <p>Looking to build a strong, lean and muscular body? Check out the top muscle building
+                                    supplements and start seeing results!</p>
+                                <h4>Build muscle</h4>
+                                <img src="images/index/build%20musle.jpg">
+                                <img src="images/index/bodybuilder-more-muscle-diet.jpg">
+                                <hr>
+                                <h4>Weight loss</h4>
+                                <img src="images/index/weight%20loss1.jpg">
+                                <img src="images/index/weight%20loss2.jpg">
+                                <hr>
+                                <h4>Transformation</h4>
+                                <img src="images/index/transformation1.jpg">
+                                <img src="images/index/transformation2.jpg">
+                                <hr>
+                                <h4>Increase Performance</h4>
+                                <img src="images/index/increase2.jpg">
+                                <img src="images/index/increase1.jpg">
+                                <hr>
+                                <h4>Endurance</h4>
+                                <img src="images/index/endurance1.jpg">
+                                <img src="images/index/endurance2.jpg">
+                                <hr>
+                                <h4>Flexibility</h4>
+                                <img src="images/index/flexibility1.jpg">
+                                <img src="images/index/flexibility2.jpg">
+                                <hr>
+                                <h4>Power Increase</h4>
+                                <img src="images/index/strange1.jpg">
+                                <img src="images/index/strange2.jpg">
+                                <hr>
+                                <h4>Joga</h4>
+                                <img src="images/index/strange1.jpg">
+                                <img src="images/index/strange2.jpg">
+                                <hr>
+                                <h3 class="modal-title" id="myModalLabel">Get training</h3>
+                                <p>Looking to build a strong, lean and muscular body? Check out the top muscle building
+                                    supplements and start seeing results!</p>
+                                <img src="images/index/plan1.jpg">
+                                <img src="images/index/plan2.jpg">
+                                <hr>
+                                <h3 class="modal-title" id="myModalLabel">Get diet</h3>
+                                <p>Looking to build a strong, lean and muscular body? Check out the top muscle building
+                                    supplements and start seeing results!</p>
+                                <img src="images/index/food1.jpg">
+                                <img src="images/index/food2.jpg">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.row -->
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Ultimate Trainer Studio</p>
+        </div>
+    </div>
+</footer>
+
+</div>
+<!-- /.container -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" rel="stylesheet" src="js/bootstrap.min.js"></script>
+
+<!--My Js-->
+<script type="text/javascript" rel="stylesheet" src="js/myJs.js"></script>
+
+<script type="text/javascript" rel="stylesheet" src="js/jquery.reveal.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
+
+
+</body>
+
+
+</html>
