@@ -11,16 +11,14 @@ body{padding-top:20px}
 }
 
 .plan:hover {
-    -moz-box-shadow: 0 0 12px 3px #b0b2ab;
-    -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
-    box-shadow: 0 0 12px 3px #b0b2ab;
+
 }
 
 .plan {
     padding: 20px;
     margin-left:0px;
-    color: #fff;
-    background-color: #337AB7;
+    color: #286090;
+    background-color: #222222;
     -moz-border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
