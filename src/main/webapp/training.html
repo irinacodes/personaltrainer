@@ -142,7 +142,18 @@
                                 </div>
                             </div>
                             <div class="alert btn-primary">
-                                Ovde ide text kako se izvodi vezba
+                                <div align="center">
+                                <b>TIMER</b>
+                                </div>
+                                <div class="timer" align="center">
+                                    <span class="minute">00</span>:<span class="second">00</span>
+                                </div>
+                                <div class="control" align="center">
+                                    <button onClick="timer.start(1000)">Start</button>
+                                    <button onClick="timer.mode(1)">+</button>
+                                    <button onClick="timer.stop()">Stop</button>
+                                    <button onClick="timer.reset(0)">Reset</button>
+                                </div>
                             </div>
                             <div class="alert alert-success" style="display:none;">
                                 <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order
@@ -229,7 +240,7 @@
                                         Standard Set
                                     </th>
                                     <th id="slova">
-                                        <input id="kg" type="text" placeholder="Kg"><input type="button" value="Ok">
+                                        <input id="kg" type="text" placeholder="Kg"><input type="button" name="but1" onclick="noviText()" value="Ok">
                                     </th>
                                 </tr>
                                 </thead>
@@ -293,7 +304,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<script style="js/training.js"></script>
+<script src="js/training.js"></script>
+
+<script src="js/myJs.js"></script>
 
 </body>
 

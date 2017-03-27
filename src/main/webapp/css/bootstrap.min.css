@@ -3489,7 +3489,6 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
     border-color: #204d74
 }
 
@@ -3577,7 +3576,6 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-info:hover {
     color: #fff;
-    background-color: #31b0d5;
     border-color: #269abc
 }
 
